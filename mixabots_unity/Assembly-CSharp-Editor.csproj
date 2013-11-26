@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+	<ProductVersion>10.0.20506</ProductVersion>
+	<SchemaVersion>2.0</SchemaVersion>
+	<ProjectGuid>{C20D0845-3ADF-B073-9691-596485443C81}</ProjectGuid>
+	<OutputType>Library</OutputType>
+	<AppDesignerFolder>Properties</AppDesignerFolder>
+	<RootNamespace></RootNamespace>
+	<AssemblyName>Assembly-CSharp-Editor</AssemblyName>
+	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+	<FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	<DebugSymbols>true</DebugSymbols>
+	<DebugType>full</DebugType>
+	<Optimize>false</Optimize>
+	<OutputPath>Temp\bin\Debug\</OutputPath>
+	<DefineConstants>DEBUG;TRACE;UNITY_IPHONE;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;ENABLE_WWW;ENABLE_IMAGEEFFECTS;UNITY_IPHONE_API;ENABLE_WEBCAM;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_GAMECENTER;UNITY_IOS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;UNITY_4_2_2;UNITY_4_2;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_OSX;ENABLE_DUCK_TYPING</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	<DebugType>pdbonly</DebugType>
+	<Optimize>true</Optimize>
+	<OutputPath>Temp\bin\Release\</OutputPath>
+	<DefineConstants>TRACE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+	<Reference Include="System" />
+    <Reference Include="System.XML" />
+	<Reference Include="System.Core" />
+	<Reference Include="UnityEngine">
+	  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.dll</HintPath>
+	</Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\DemoVikings\Demo\Assets\Label\Editor\LabelEditor.cs" />
+     <Compile Include="Assets\DemoVikings\Editor\PropertyEditor.cs" />
+     <Compile Include="Assets\DemoVikings\Editor\ThirdPersonCameraEditor.cs" />
+     <Compile Include="Assets\DemoVikings\Editor\ThirdPersonControllerEditor.cs" />
+     <Compile Include="Assets\EasyTouch\Plugins\Editor\GUIEasyButtonCallBack.cs" />
+     <Compile Include="Assets\EasyTouch\Plugins\Editor\GUIEasyButtonInspector.cs" />
+     <Compile Include="Assets\EasyTouch\Plugins\Editor\GUIEasyJoystickCallBack.cs" />
+     <Compile Include="Assets\EasyTouch\Plugins\Editor\GUIEasyJoystickInspector.cs" />
+     <Compile Include="Assets\EasyTouch\Plugins\Editor\GUIEasyTouchInspector.cs" />
+     <Compile Include="Assets\EasyTouch\Plugins\Editor\GUIEasyTouchMenu.cs" />
+     <Compile Include="Assets\EasyTouch\Plugins\Editor\GUIEasytouchCallBack.cs" />
+     <Compile Include="Assets\EasyTouch\Plugins\Editor\HTEditorToolKit.cs" />
+     <Compile Include="Assets\Editor\ConvertToRotationOnlyAnim.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Editor\BMFontReader.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Editor\ComponentSelector.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Editor\NGUIEditorTools.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Editor\NGUIJson.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Editor\NGUIMenu.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Editor\NGUISelectionTools.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Editor\NGUISettings.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Editor\NGUITransformInspector.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Editor\SpriteSelector.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Editor\UIAtlasInspector.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Editor\UIAtlasMaker.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Editor\UICameraTool.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Editor\UICreateNewUIWizard.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Editor\UICreateWidgetWizard.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Editor\UIDrawCallInspector.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Editor\UIFilledSpriteInspector.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Editor\UIFontInspector.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Editor\UIFontMaker.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Editor\UIImageButtonInspector.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Editor\UILabelInspector.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Editor\UIPanelInspector.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Editor\UIPanelTool.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Editor\UIPopupListInspector.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Editor\UIScrollBarInspector.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Editor\UISlicedSpriteInspector.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Editor\UISliderInspector.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Editor\UISpriteAnimationInspector.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Editor\UISpriteInspector.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Editor\UITextureInspector.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Editor\UITexturePacker.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Editor\UITiledSpriteInspector.cs" />
+     <Compile Include="Assets\NGUI\Scripts\Editor\UIWidgetInspector.cs" />
+     <Compile Include="Assets\Photon Unity Networking\Editor\PhotonNetwork\AccountService.cs" />
+     <Compile Include="Assets\Photon Unity Networking\Editor\PhotonNetwork\PhotonConverter.cs" />
+     <Compile Include="Assets\Photon Unity Networking\Editor\PhotonNetwork\PhotonEditor.cs" />
+     <Compile Include="Assets\Photon Unity Networking\Editor\PhotonNetwork\PhotonViewHandler.cs" />
+     <Compile Include="Assets\Photon Unity Networking\Editor\PhotonNetwork\PhotonViewInspector.cs" />
+     <Compile Include="Assets\Photon Unity Networking\Editor\PhotonNetwork\PhotonViewPrefabApply.cs" />
+     <Compile Include="Assets\Photon Unity Networking\Editor\PhotonNetwork\ServerSettingsInspector.cs" />
+     <Compile Include="Assets\Scripts\Editor\ArmorEditor.cs" />
+     <Compile Include="Assets\Scripts\Editor\Generator\ArmorGenerator.cs" />
+     <Compile Include="Assets\Scripts\Editor\Generator\GeneratorConfig.cs" />
+     <Compile Include="Assets\Scripts\Editor\Generator\ItemGenerator.cs" />
+     <Compile Include="Assets\Scripts\Editor\ItemEditor.cs" />
+     <Compile Include="Assets\Scripts\Editor\MainWindowEditor.cs" />
+     <Compile Include="Assets\Scripts\Editor\NPCEditor.cs" />
+     <Compile Include="Assets\Scripts\Editor\ShopEditor.cs" />
+     <Compile Include="Assets\Scripts\Editor\Utils\BaseEditorWindow.cs" />
+     <Compile Include="Assets\Scripts\Editor\Utils\EditorUtils.cs" />
+     <Compile Include="Assets\Scripts\Editor\Utils\GUIUtils.cs" />
+     <Compile Include="Assets\Scripts\Editor\Utils\ItemUtils.cs" />
+     <Compile Include="Assets\Scripts\Editor\Utils\Validation\XMLError.cs" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Depth Cutout.shader" />
+     <None Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\library\release_history.txt" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Masked Colored.shader" />
+     <None Include="Assets\EasyTouch\Readme_first.txt" />
+     <None Include="Assets\Plugins\FingerGestures\Readme.txt" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed) (AlphaClip) .shader" />
+     <None Include="Assets\RPGKit\Resources\XML\SHOPEN.xml" />
+     <None Include="Assets\Photon Unity Networking\changelog.txt" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored (SoftClip).shader" />
+     <None Include="Assets\Fonts\ArialBold-32\ArialBold-32.txt" />
+     <None Include="Assets\DemoVikings\Demo\READ ME FIRST.txt" />
+     <None Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\library\Photon3Unity3D.xml" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (AlphaClip).shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\SimpleTransparent.shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\SimpleTransparent 1.shader" />
+     <None Include="Assets\DemoVikings\Demo\Shaders\NewShader.shader" />
+     <None Include="Assets\RPGKit\Resources\XML\ARMOREN.xml" />
+     <None Include="Assets\NGUI\ReadMe - 2.3.1.txt" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored (AlphaClip).shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed) (SoftClip).shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored.shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (Cull).shader" />
+     <None Include="Assets\RPGKit\Resources\XML\ITEMEN.xml" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored Overlay.shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored.shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed).shader" />
+     <None Include="Assets\Photon Unity Networking\readme.txt" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Additive Colored.shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Depth.shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (SoftClip).shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (DeskewedHardClip).shader" />
+ <Reference Include="Assets\Photon Unity Networking\Editor\PhotonNetwork\Newtonsoft.Json">
+ <HintPath>Assets\Photon Unity Networking\Editor\PhotonNetwork\Newtonsoft.Json.dll</HintPath>
+ </Reference>
+ <Reference Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\library\Photon3Unity3D">
+ <HintPath>Assets\Photon Unity Networking\Plugins\PhotonNetwork\library\Photon3Unity3D.dll</HintPath>
+ </Reference>
+ <Reference Include="\Applications\Unity\Unity.app\Contents\Frameworks\Managed\UnityEditor.Graphs">
+ <HintPath>\Applications\Unity\Unity.app\Contents\Frameworks\Managed\UnityEditor.Graphs.dll</HintPath>
+ </Reference>
+ <Reference Include="\Applications\Unity\Unity.app\Contents\PlaybackEngines\iPhonePlayer\EditorExtensions\UnityEditor.iOS.Extensions">
+ <HintPath>\Applications\Unity\Unity.app\Contents\PlaybackEngines\iPhonePlayer\EditorExtensions\UnityEditor.iOS.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="\Applications\Unity\Unity.app\Contents\PlaybackEngines\BB10Player\EditorExtensions\UnityEditor.BB10.Extensions">
+ <HintPath>\Applications\Unity\Unity.app\Contents\PlaybackEngines\BB10Player\EditorExtensions\UnityEditor.BB10.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="\Applications\Unity\Unity.app\Contents\PlaybackEngines\AndroidPlayer\EditorExtensions\UnityEditor.Android.Extensions">
+ <HintPath>\Applications\Unity\Unity.app\Contents\PlaybackEngines\AndroidPlayer\EditorExtensions\UnityEditor.Android.Extensions.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{545FC6CD-FEE8-EF00-8567-4B2EE69DDE8E}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+    <ProjectReference Include="Assembly-CSharp.csproj">
+      <Project>{1677B6E1-6EBF-6C6D-D26E-A41369406B85}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
+    <ProjectReference Include="Assembly-UnityScript.unityproj">
+      <Project>{8010FE74-3D6D-96A1-BA31-147DCEA19ADE}</Project>      <Name>Assembly-UnityScript</Name>    </ProjectReference>
+    <ProjectReference Include="Assembly-CSharp-Editor-firstpass.csproj">
+      <Project>{64D9676A-BDE1-D7EF-479B-53F9E76BE5BA}</Project>      <Name>Assembly-CSharp-Editor-firstpass</Name>    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	   Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>

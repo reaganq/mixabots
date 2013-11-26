@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+	<ProductVersion>10.0.20506</ProductVersion>
+	<SchemaVersion>2.0</SchemaVersion>
+	<ProjectGuid>{64D9676A-BDE1-D7EF-479B-53F9E76BE5BA}</ProjectGuid>
+	<OutputType>Library</OutputType>
+	<AppDesignerFolder>Properties</AppDesignerFolder>
+	<RootNamespace></RootNamespace>
+	<AssemblyName>Assembly-CSharp-Editor-firstpass</AssemblyName>
+	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+	<FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	<DebugSymbols>true</DebugSymbols>
+	<DebugType>full</DebugType>
+	<Optimize>false</Optimize>
+	<OutputPath>Temp\bin\Debug\</OutputPath>
+	<DefineConstants>DEBUG;TRACE;UNITY_IPHONE;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;ENABLE_WWW;ENABLE_IMAGEEFFECTS;UNITY_IPHONE_API;ENABLE_WEBCAM;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_GAMECENTER;UNITY_IOS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;UNITY_4_2_2;UNITY_4_2;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_OSX;ENABLE_DUCK_TYPING</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	<DebugType>pdbonly</DebugType>
+	<Optimize>true</Optimize>
+	<OutputPath>Temp\bin\Release\</OutputPath>
+	<DefineConstants>TRACE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+	<Reference Include="System" />
+    <Reference Include="System.XML" />
+	<Reference Include="System.Core" />
+	<Reference Include="UnityEngine">
+	  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.dll</HintPath>
+	</Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\Plugins\Editor\FingerGestures\DragRecognizerInspector.cs" />
+     <Compile Include="Assets\Plugins\Editor\FingerGestures\FingerDownDetectorInspector.cs" />
+     <Compile Include="Assets\Plugins\Editor\FingerGestures\FingerEventDetectorInspector.cs" />
+     <Compile Include="Assets\Plugins\Editor\FingerGestures\FingerGesturesEditorUtils.cs" />
+     <Compile Include="Assets\Plugins\Editor\FingerGestures\FingerGesturesInspector.cs" />
+     <Compile Include="Assets\Plugins\Editor\FingerGestures\FingerHoverDetectorInspector.cs" />
+     <Compile Include="Assets\Plugins\Editor\FingerGestures\FingerMotionDetectorInspector.cs" />
+     <Compile Include="Assets\Plugins\Editor\FingerGestures\FingerUpDetectorInspector.cs" />
+     <Compile Include="Assets\Plugins\Editor\FingerGestures\GestureRecognizerInspector.cs" />
+     <Compile Include="Assets\Plugins\Editor\FingerGestures\LongPressRecognizerInspector.cs" />
+     <Compile Include="Assets\Plugins\Editor\FingerGestures\PinchRecognizerInspector.cs" />
+     <Compile Include="Assets\Plugins\Editor\FingerGestures\PointCloudGestureEditor.cs" />
+     <Compile Include="Assets\Plugins\Editor\FingerGestures\PointCloudGestureTemplateInspector.cs" />
+     <Compile Include="Assets\Plugins\Editor\FingerGestures\PointCloudRecognizerInspector.cs" />
+     <Compile Include="Assets\Plugins\Editor\FingerGestures\SwipeRecognizerInspector.cs" />
+     <Compile Include="Assets\Plugins\Editor\FingerGestures\TapRecognizerInspector.cs" />
+     <Compile Include="Assets\Plugins\Editor\FingerGestures\TwistRecognizerInspector.cs" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Depth Cutout.shader" />
+     <None Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\library\release_history.txt" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Masked Colored.shader" />
+     <None Include="Assets\EasyTouch\Readme_first.txt" />
+     <None Include="Assets\Plugins\FingerGestures\Readme.txt" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed) (AlphaClip) .shader" />
+     <None Include="Assets\RPGKit\Resources\XML\SHOPEN.xml" />
+     <None Include="Assets\Photon Unity Networking\changelog.txt" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored (SoftClip).shader" />
+     <None Include="Assets\Fonts\ArialBold-32\ArialBold-32.txt" />
+     <None Include="Assets\DemoVikings\Demo\READ ME FIRST.txt" />
+     <None Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\library\Photon3Unity3D.xml" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (AlphaClip).shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\SimpleTransparent.shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\SimpleTransparent 1.shader" />
+     <None Include="Assets\DemoVikings\Demo\Shaders\NewShader.shader" />
+     <None Include="Assets\RPGKit\Resources\XML\ARMOREN.xml" />
+     <None Include="Assets\NGUI\ReadMe - 2.3.1.txt" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored (AlphaClip).shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed) (SoftClip).shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored.shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (Cull).shader" />
+     <None Include="Assets\RPGKit\Resources\XML\ITEMEN.xml" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored Overlay.shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored.shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed).shader" />
+     <None Include="Assets\Photon Unity Networking\readme.txt" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Additive Colored.shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Depth.shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (SoftClip).shader" />
+     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (DeskewedHardClip).shader" />
+ <Reference Include="Assets\Photon Unity Networking\Editor\PhotonNetwork\Newtonsoft.Json">
+ <HintPath>Assets\Photon Unity Networking\Editor\PhotonNetwork\Newtonsoft.Json.dll</HintPath>
+ </Reference>
+ <Reference Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\library\Photon3Unity3D">
+ <HintPath>Assets\Photon Unity Networking\Plugins\PhotonNetwork\library\Photon3Unity3D.dll</HintPath>
+ </Reference>
+ <Reference Include="\Applications\Unity\Unity.app\Contents\Frameworks\Managed\UnityEditor.Graphs">
+ <HintPath>\Applications\Unity\Unity.app\Contents\Frameworks\Managed\UnityEditor.Graphs.dll</HintPath>
+ </Reference>
+ <Reference Include="\Applications\Unity\Unity.app\Contents\PlaybackEngines\iPhonePlayer\EditorExtensions\UnityEditor.iOS.Extensions">
+ <HintPath>\Applications\Unity\Unity.app\Contents\PlaybackEngines\iPhonePlayer\EditorExtensions\UnityEditor.iOS.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="\Applications\Unity\Unity.app\Contents\PlaybackEngines\BB10Player\EditorExtensions\UnityEditor.BB10.Extensions">
+ <HintPath>\Applications\Unity\Unity.app\Contents\PlaybackEngines\BB10Player\EditorExtensions\UnityEditor.BB10.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="\Applications\Unity\Unity.app\Contents\PlaybackEngines\AndroidPlayer\EditorExtensions\UnityEditor.Android.Extensions">
+ <HintPath>\Applications\Unity\Unity.app\Contents\PlaybackEngines\AndroidPlayer\EditorExtensions\UnityEditor.Android.Extensions.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{545FC6CD-FEE8-EF00-8567-4B2EE69DDE8E}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	   Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>
