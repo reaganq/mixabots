@@ -5,25 +5,28 @@ public class ThirdPersonCamera: MonoBehaviour {
  
     public Transform targetTransform = null;
     public Transform pivotTransform = null;
-    private Vector3 offsetPosition;
+    //private Vector3 offsetPosition;
     
-    public float rotationSpeed = 50;
-    public EasyJoystick joystick = null;
+    //public float rotationSpeed = 50;
+    //public EasyJoystick joystick = null;
     
-    private Transform _myTransform;
+    //private Transform _myTransform = null;
     
-    private Vector2 outputAngleVector;
-    private float outputAngle = 0.0f;
+    //private Vector2 outputAngleVector = Vector2.zero;
+    //private float outputAngle = 0.0f;
     
-    private Vector2 camRotation;
+    //private Vector2 camRotation;
     
 	// Use this for initialization
 	void Start () {
-	    _myTransform = transform;
-        camRotation = new Vector2(0,0);
-        outputAngleVector = new Vector2(0,0);
-        offsetPosition = pivotTransform.position;
-        joystick = GameObject.FindGameObjectWithTag("GameController").GetComponent<EasyJoystick>();
+	    //_myTransform = transform;
+        //camRotation = new Vector2(0,0);
+        
+        //offsetPosition = pivotTransform.position;
+        
+        
+        //outputAngleVector = new Vector2(0,0);
+        //joystick = GameObject.FindGameObjectWithTag("GameController").GetComponent<EasyJoystick>();
 	}
     
     /*void OnEnable(){
@@ -59,17 +62,16 @@ public class ThirdPersonCamera: MonoBehaviour {
 	// Update is called once per frame
 	void LateUpdate () {
         
-        outputAngle = Mathf.Atan2(joystick.JoystickAxis.x, joystick.JoystickAxis.y);
+        //outputAngle = Mathf.Atan2(joystick.JoystickAxis.x, joystick.JoystickAxis.y);
         
         
         pivotTransform.position = targetTransform.position;
-        camRotation = new Vector2(Mathf.Sin(outputAngle), Mathf.Cos(outputAngle));
-        camRotation.x *= rotationSpeed;
-        camRotation *= Time.deltaTime;
+        //camRotation = new Vector2(Mathf.Sin(outputAngle), Mathf.Cos(outputAngle));
+        //camRotation.x *= rotationSpeed;
+        //camRotation *= Time.deltaTime;
         
-        //Debug.Log(camRotation.x);
         
-        pivotTransform.Rotate(0, camRotation.x, 0, Space.World );
+        //pivotTransform.Rotate(0, camRotation.x, 0, Space.World );
         
         
         /*var camRotation = new Vector2(Mathf.Sin(joystickCircle.outputAngleRad) , Mathf.Cos(joystickCircle.outputAngleRad));

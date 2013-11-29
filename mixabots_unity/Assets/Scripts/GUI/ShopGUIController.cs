@@ -31,6 +31,7 @@ public class ShopGUIController : BasicGUIController {
         //OnInventoryPressed(0);
         ResetSelection();
         RefreshInventoryIcons();
+        DefaultInfoPanel();
         Debug.Log("enable");   
     }
     
@@ -53,6 +54,10 @@ public class ShopGUIController : BasicGUIController {
             ItemTiles[index].Select();
             CurrentSelectedItemIndex = index;
             UpdateInfoPanel();
+            if(CurrentShopMode == ShopMode.buy)
+                BuyButton.SetActive(true);
+            else
+                SellButton.SetActive(true);
             //Player.Instance.currentItem 
         }
     }
@@ -143,7 +148,8 @@ public class ShopGUIController : BasicGUIController {
             DefaultInfoPanel();
             //allgood;
         }
-
+  
+        RefreshInventoryIcons();
     }
     
     public void OnSellButtonPressed()
@@ -197,6 +203,8 @@ public class ShopGUIController : BasicGUIController {
     
     public void RefreshInventoryIcons()
     {
+        Debug.Log("refresh inventory");
+        Debug.Log(Player.Instance.ActiveShop.ShopItems.Count);
         for (int i = 0; i <  ItemTiles.Length; i++) {
             if(i >= Player.Instance.ActiveShop.ShopItems.Count)
                 ItemTiles[i].Hide();
@@ -231,7 +239,11 @@ public class ShopGUIController : BasicGUIController {
         if(CurrentSelectedItemIndex != -1)
             ItemTiles[CurrentSelectedItemIndex].Deselect();
         CurrentSelectedItemIndex = -1;
-
+        for (int i = 0; i <  ItemTiles.Length; i++) {
+            ItemTiles[i].Unequip();
+        }
+        BuyButton.SetActive(false);
+        SellButton.SetActive(false);
     }
     
     public void HideInfoPanel()
@@ -249,10 +261,19 @@ public class ShopGUIController : BasicGUIController {
     {
         if(CurrentShopMode == ShopMode.buy)
         {
-            
+            ItemNameLabel.enabled = true;
+            ItemNameLabel.text = Player.Instance.ActiveShop.Name;
+            ItemDescriptionLabel.enabled = true;
+            ItemDescriptionLabel.text = Player.Instance.ActiveShop.Description;
+            ItemSkillDescriptionLabel.enabled = false;
         }
         else
         {
+            ItemNameLabel.enabled = true;
+            ItemNameLabel.text = Player.Instance.ActiveShop.Name;
+            ItemDescriptionLabel.enabled = true;
+            ItemDescriptionLabel.text = Player.Instance.ActiveShop.Description;
+            ItemSkillDescriptionLabel.enabled = false;
         }
     }
     

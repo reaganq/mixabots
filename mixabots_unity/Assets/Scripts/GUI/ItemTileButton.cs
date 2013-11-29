@@ -35,10 +35,11 @@ public class ItemTileButton: MonoBehaviour
     public Color EquippedColor = Color.cyan;
     public Color SelectedColor = Color.white;
 
-	bool mStarted = false;
+	//bool mStarted = false;
 	//bool mHighlighted = false;
 
-	void Start () { mStarted = true; }
+	void Start () { //mStarted = true; 
+    }
 
 	//void OnEnable () { if (mStarted && mHighlighted) OnHover(UICamera.IsHighlighted(gameObject)); }
 
@@ -57,7 +58,7 @@ public class ItemTileButton: MonoBehaviour
 
 	void Send ()
 	{
-        Debug.Log("send");
+        //Debug.Log("send");
 		if (string.IsNullOrEmpty(functionName)) return;
 		//if (target == null) target = gameObject;
   

@@ -1,11 +1,11 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
 public class Avatar : MonoBehaviour {
 
 	// Use this for initialization
-    public RobotAnimationController animationController;
+    public CharacterMotor animationController;
     public Animation animationTarget;
     
     public Transform HipBone;
@@ -24,7 +24,7 @@ public class Avatar : MonoBehaviour {
     
 	void Awake () {
 	    //HipBone = transform.FindChild("Hips");
-        animationController = GetComponent<RobotAnimationController>();
+        animationController = GetComponent<CharacterMotor>();
         animationTarget = HipBone.GetComponent<Animation>();
 	}
     

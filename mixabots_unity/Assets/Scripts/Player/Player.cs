@@ -51,7 +51,7 @@ public class Player : MonoBehaviour
 
     void Awake()
     {
-        avatarObject = GameObject.FindGameObjectWithTag("Avatar");
+        avatarObject = GameObject.FindGameObjectWithTag("Player");
         avatar = avatarObject.GetComponent<Avatar>();
         DontDestroyOnLoad(gameObject);
         Hero = new PlayerInformation();

@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -6,7 +6,7 @@ public class ArmorController : MonoBehaviour {
  
     public Animation rootAnimationTarget;
     public Animation myAnimation;
-    public RobotAnimationController controller;
+    public CharacterMotor controller;
     
     public UsageType usageType;
     public WeaponType weaponType;
@@ -49,7 +49,7 @@ public class ArmorController : MonoBehaviour {
     }
     
     #region animation transfers
-    public void TransferAnimations(Animation target, RobotAnimationController newcontroller)
+    public void TransferAnimations(Animation target, CharacterMotor newcontroller)
     {
         myAnimation = GetComponent<Animation>();
         

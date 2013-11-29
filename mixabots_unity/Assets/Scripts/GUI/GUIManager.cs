@@ -17,21 +17,28 @@ public class GUIManager : MonoBehaviour {
         }
     }
     
+    public Camera mainCamera = null;
+    
     public Transform UICameraRoot = null;
     
     public bool CanShowInventory = true;
     public bool CanShowShop = true;
+    public bool CanShowNPC = true;
 
     public GameObject ArmoryGUI = null;
     public GameObject MainGUI = null;
     public GameObject ShopGUI = null;
+    public GameObject NPCGUI = null;
+    
     public GameObject Joystick = null;
     public GameObject OpenInventoryButton = null;
+    public GameObject ActionButtons = null;
+    public UILabel MagnetsCounter = null;
     
     public bool IsInventoryDisplayed = false;
     public bool IsShopDisplayed = false;
     public bool IsMainGUIDisplayed = false;
-    
+    public bool IsNPCGUIDisplayed = false;
     
     public Camera Inventory3DCamera = null;
     
@@ -44,7 +51,7 @@ public class GUIManager : MonoBehaviour {
     {
         //DisplayMainGUI();
         UICameraRoot = GameObject.FindGameObjectWithTag("UICamera").transform;
-        
+        mainCamera = Camera.main;
         HideInventory();
     }
     
@@ -58,12 +65,22 @@ public class GUIManager : MonoBehaviour {
         DisplayMainGUI();
     }
     
+    public void UpdateMagnetsCount()
+    {
+        MagnetsCounter.text = Player.Instance.Hero.Magnets.ToString();
+    }
+    
     public void DisplayMainGUI()
     {
         if(!IsMainGUIDisplayed)
         {
-            Joystick.SetActive(true);
             MainGUI.SetActive(true);
+            if(GameManager.inputType == InputType.TouchInput)
+            {
+                Joystick.SetActive(true);
+            }
+            else
+                ActionButtons.SetActive(false);
             if(!CanShowInventory)
                 OpenInventoryButton.SetActive(false);
             IsMainGUIDisplayed = true;
@@ -74,9 +91,13 @@ public class GUIManager : MonoBehaviour {
     {
         if(IsMainGUIDisplayed)
         {
+            if(GameManager.inputType == InputType.TouchInput)
+            {
+                Joystick.SetActive(false);
+            }
             MainGUI.SetActive(false);
-            Joystick.SetActive(false);
             IsMainGUIDisplayed = false;
+            //Debug.Log("hide main");
         }
     }
     
@@ -85,9 +106,12 @@ public class GUIManager : MonoBehaviour {
         if(!IsInventoryDisplayed && CanShowInventory)
         {
             HideMainGUI();
+            TurnOffAllOtherUI();
             ArmoryGUI.SetActive(true);
             IsInventoryDisplayed = true;
+            Inventory3DCamera.gameObject.SetActive(true);
             Inventory3DCamera.enabled = true;
+            mainCamera.enabled = false;
             ArmoryGUI.SendMessage("Enable");
         }
     }
@@ -100,8 +124,32 @@ public class GUIManager : MonoBehaviour {
             IsInventoryDisplayed = false;
             //Debug.Log("hiding inventory");
             DisplayMainGUI();
+            mainCamera.enabled = true;
+            Inventory3DCamera.gameObject.SetActive(false);
             Inventory3DCamera.enabled = false;
             
+        }
+    }
+    
+    public void DisplayNPC()
+    {
+        if(!IsNPCGUIDisplayed)
+        {
+            HideMainGUI();
+            TurnOffAllOtherUI();
+            NPCGUI.SetActive(true);
+            NPCGUI.SendMessage("Enable");
+            IsNPCGUIDisplayed = true;
+        }
+    }
+    
+    public void HideNPC()
+    {
+        if(IsNPCGUIDisplayed)
+        {
+            NPCGUI.SetActive(false);
+            IsNPCGUIDisplayed = false;
+            DisplayMainGUI();
         }
     }
     
@@ -110,10 +158,11 @@ public class GUIManager : MonoBehaviour {
         if(!IsShopDisplayed && CanShowShop)
         {
             HideMainGUI();
+            TurnOffAllOtherUI();
             ShopGUI.SetActive(true);
+            mainCamera.enabled = false;
             IsShopDisplayed = true;
             ShopGUI.SendMessage("Enable");
-                
         }
     }
     
@@ -121,9 +170,45 @@ public class GUIManager : MonoBehaviour {
     {
         if(IsShopDisplayed)
         {
+            mainCamera.enabled = true;
             ShopGUI.SetActive(false);
             IsShopDisplayed = false;
             DisplayMainGUI();
         }
+    }
+    
+    public void TurnOffAllOtherUI()
+    {
+        if(IsInventoryDisplayed)
+        {
+            ArmoryGUI.SetActive(false);
+            mainCamera.enabled = true;
+            Inventory3DCamera.gameObject.SetActive(false);
+            Inventory3DCamera.enabled = false;
+            IsInventoryDisplayed = false;
+        }
+        if(IsShopDisplayed)
+        {
+            mainCamera.enabled = true;
+            ShopGUI.SetActive(false);
+            IsShopDisplayed = false;
+        }
+        if(IsNPCGUIDisplayed)
+        {
+            NPCGUI.SetActive(false);
+            IsNPCGUIDisplayed = false;
+        }
+    }
+    
+    public bool IsUIBusy()
+    {
+        if(IsInventoryDisplayed)
+            return true;
+        else if(IsShopDisplayed)
+            return true;
+        else if(IsNPCGUIDisplayed)
+            return true;
+        else
+            return false;
     }
 }

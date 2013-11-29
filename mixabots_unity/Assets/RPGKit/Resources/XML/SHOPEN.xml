@@ -7,9 +7,29 @@
     <SystemDescription />
     <Items>
       <ShopItem>
+        <StackAmount>2</StackAmount>
+        <Preffix>WEAPON</Preffix>
+        <ID>1</ID>
+      </ShopItem>
+      <ShopItem>
+        <StackAmount>5</StackAmount>
+        <Preffix>WEAPON</Preffix>
+        <ID>2</ID>
+      </ShopItem>
+      <ShopItem>
         <StackAmount>1</StackAmount>
         <Preffix>WEAPON</Preffix>
-        <ID>0</ID>
+        <ID>3</ID>
+      </ShopItem>
+      <ShopItem>
+        <StackAmount>2</StackAmount>
+        <Preffix>WEAPON</Preffix>
+        <ID>4</ID>
+      </ShopItem>
+      <ShopItem>
+        <StackAmount>3</StackAmount>
+        <Preffix>WEAPON</Preffix>
+        <ID>5</ID>
       </ShopItem>
     </Items>
     <RestockTime>100</RestockTime>

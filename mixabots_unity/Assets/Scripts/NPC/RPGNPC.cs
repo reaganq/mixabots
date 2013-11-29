@@ -115,17 +115,17 @@ public class RPGNPC : IItem
 		//GeneralConversationID = new List<int>();
 	}
 	
-	public bool IsShop(Player player)
+	/*public bool IsShop(Player player)
 	{
-		/*foreach(Condition c in ShopConditions)
+		foreach(Condition c in ShopConditions)
 		{
             if (!c.Validate(player))
 			{
 				return false;
 			}
-		}*/
+		}
 		return true;
-	}
+	}*/
 	
 	/*public bool IsSpellShop(Player player)
 	{

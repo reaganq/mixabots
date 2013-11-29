@@ -11,8 +11,8 @@
     <AtlasName>ArmorAtlas</AtlasName>
     <BuyCurrency>Magnets</BuyCurrency>
     <Stackable>false</Stackable>
-    <BuyValue>0</BuyValue>
-    <SellValue>0</SellValue>
+    <BuyValue>10</BuyValue>
+    <SellValue>5</SellValue>
     <Rarity>Common</Rarity>
     <EquipmentSlotIndex>ArmL</EquipmentSlotIndex>
     <FBXName>Armor/ArmL/knight_armL</FBXName>
@@ -32,8 +32,8 @@
     <AtlasName>ArmorAtlas</AtlasName>
     <BuyCurrency>Magnets</BuyCurrency>
     <Stackable>false</Stackable>
-    <BuyValue>0</BuyValue>
-    <SellValue>0</SellValue>
+    <BuyValue>10</BuyValue>
+    <SellValue>5</SellValue>
     <Rarity>Common</Rarity>
     <EquipmentSlotIndex>Head</EquipmentSlotIndex>
     <FBXName>Armor/Head/knight_head</FBXName>
@@ -53,8 +53,8 @@
     <AtlasName>ArmorAtlas</AtlasName>
     <BuyCurrency>Magnets</BuyCurrency>
     <Stackable>false</Stackable>
-    <BuyValue>0</BuyValue>
-    <SellValue>0</SellValue>
+    <BuyValue>10</BuyValue>
+    <SellValue>5</SellValue>
     <Rarity>Rare</Rarity>
     <EquipmentSlotIndex>Body</EquipmentSlotIndex>
     <FBXName>Armor/Body/knight_body</FBXName>
@@ -74,8 +74,8 @@
     <AtlasName>ArmorAtlas</AtlasName>
     <BuyCurrency>Magnets</BuyCurrency>
     <Stackable>false</Stackable>
-    <BuyValue>0</BuyValue>
-    <SellValue>0</SellValue>
+    <BuyValue>10</BuyValue>
+    <SellValue>5</SellValue>
     <Rarity>Legendary</Rarity>
     <EquipmentSlotIndex>ArmR</EquipmentSlotIndex>
     <FBXName>Armor/ArmR/knight_armR</FBXName>
@@ -95,8 +95,8 @@
     <AtlasName>ArmorAtlas</AtlasName>
     <BuyCurrency>Magnets</BuyCurrency>
     <Stackable>false</Stackable>
-    <BuyValue>0</BuyValue>
-    <SellValue>0</SellValue>
+    <BuyValue>10</BuyValue>
+    <SellValue>5</SellValue>
     <Rarity>Common</Rarity>
     <EquipmentSlotIndex>Legs</EquipmentSlotIndex>
     <FBXName>Armor/Legs/knight_legs</FBXName>

@@ -22,7 +22,7 @@ public class Shop : BasicItem
 	
 	[XmlIgnore]
 	public List<ItemInWorld> ShopItems = new List<ItemInWorld>();
-    public float LastRestockTime;
+    public float LastRestockTime = 0;
 	
 	public Shop()
 	{
@@ -61,8 +61,13 @@ public class Shop : BasicItem
 		else
 		{
 			//add item to inventory
-            Player.Instance.Hero.Inventory.AddItem(item, Amount);
-			
+            if(item.ItemCategory == ItemType.Armor)
+            {
+                PreffixSolver.GiveItem(PreffixType.ARMOR, item.ID, Amount);
+            }
+            else
+                Player.Instance.Hero.Inventory.AddItem(item, Amount);
+            
 			//remove currency amount from inventory
 			Player.Instance.Hero.RemoveCurrency(price, item.BuyCurrency);
 			
@@ -140,19 +145,29 @@ public class Shop : BasicItem
         return dt.AddDays(-1 * diff).Date;
     }*/
 	
-	public List<ItemInWorld> GetItems(int NPCId, Player player)
+	public void PopulateItems()
 	{
 		//load categories
 		//foreach(ShopCategory category in Categories)
             //category.GetItems(ShopItems, player);
 		//load items
-		foreach(ShopItem shopItem in Items)
-			shopItem.AddOneItem(ShopItems);
+        Debug.Log(Items.Count);
+        
+        if(LastRestockTime == 0 || Time.realtimeSinceStartup - LastRestockTime > RestockTime)
+        {
+            ShopItems.Clear();
+    		foreach(ShopItem shopItem in Items)
+            {
+    			shopItem.AddOneItem(ShopItems);
+            }
+            LastRestockTime = Time.realtimeSinceStartup;
+            Debug.Log("shop items" + ShopItems.Count);
+        }
 
         //BuyedItems(ShopItems, NPCId, player);
         //removes the items that were previously bought, it loads the full list of items every time you access shop. Shop doesnt update shop items list
 		
-		return ShopItems;
+		//return ShopItems;
 	}
 	
 	/*private void BuyedItems(List<ItemInWorld> items, int NPCId, Player player)

@@ -51,7 +51,7 @@ public class NPCEditor : BaseEditorWindow
 	{
 		RPGNPC s = (RPGNPC)currentItem;
 		
-		/*s.ShopID = EditorUtils.IntPopup(s.ShopID, Data.shopEditor.items, "Shop");
+		s.ShopID = EditorUtils.IntPopup(s.ShopID, Data.shopEditor.items, "Shop");
 		
 		EditorGUILayout.Separator();
 		EditorGUILayout.BeginHorizontal();
@@ -59,7 +59,7 @@ public class NPCEditor : BaseEditorWindow
 		{
 			s.ShopID = 0;
 		}
-		EditorGUILayout.EndHorizontal();*/
+		EditorGUILayout.EndHorizontal();
 		
 		/*ConditionsUtils.Conditions(s.ShopConditions, Data);
 		

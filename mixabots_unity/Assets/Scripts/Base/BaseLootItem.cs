@@ -39,9 +39,13 @@ public class BaseLootItem
 	public void AddOneItem(List<ItemInWorld> BaseLootItems)
 	{
 		//validate conditions
-		if (!CanYouLoot)
-			return;
-		
+		//if (!CanYouLoot)
+			//return;
+		RPGArmor armor = Storage.LoadById<RPGArmor>(ID, new RPGArmor());
+        RPGItem item = (RPGItem)armor;
+        AddItem(item, BaseLootItems);
+        //AddItem(
+        
 		/*if (Preffix == ItemTypeEnum.ITEM)
 		{
 			foreach(RPGItem item in Player.Data.Items)
@@ -91,10 +95,10 @@ public class BaseLootItem
 		ItemInWorld itemInWorld = new ItemInWorld();
 		itemInWorld.rpgItem = item;
 		itemInWorld.UniqueItemId = item.UniqueId;
-		if (item.Stackable)
+		//if (item.Stackable)
 			itemInWorld.CurrentAmount = StackAmount;
-		else
-			itemInWorld.CurrentAmount = 1;
+		//else
+			//itemInWorld.CurrentAmount = 1;
 		BaseLootItems.Add(itemInWorld);
 	}
 }

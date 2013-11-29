@@ -26,7 +26,7 @@ public class ArmoryGUIController : BasicGUIController {
     public void Enable()
     {
         OnInventoryPressed(0);
-        Debug.Log("enable");   
+        //Debug.Log("enable");   
     }
     
 	public void OnBackButtonpressed()
