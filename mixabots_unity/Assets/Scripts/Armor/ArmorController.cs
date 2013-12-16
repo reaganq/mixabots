@@ -48,10 +48,14 @@ public class ArmorController : MonoBehaviour {
         
     }
     
+    public void Start()
+    {
+        myAnimation = GetComponent<Animation>();
+    }
+    
     #region animation transfers
     public void TransferAnimations(Animation target, CharacterMotor newcontroller)
     {
-        myAnimation = GetComponent<Animation>();
         
         rootAnimationTarget = target;
         controller = newcontroller;
@@ -155,7 +159,6 @@ public class ArmorController : MonoBehaviour {
             {
                 Debug.Log(kids[i].name);
                 return kids[i];
-                
             }
         }
         return null;

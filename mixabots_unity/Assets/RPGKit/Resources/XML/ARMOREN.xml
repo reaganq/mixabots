@@ -15,7 +15,7 @@
     <SellValue>5</SellValue>
     <Rarity>Common</Rarity>
     <EquipmentSlotIndex>ArmL</EquipmentSlotIndex>
-    <FBXName>Armor/ArmL/knight_armL</FBXName>
+    <FBXName>Armor/ArmL/Knight_ArmL</FBXName>
     <ArmorClassValue>10</ArmorClassValue>
     <HasAbility>true</HasAbility>
     <AbilityString>Use this to block damage!</AbilityString>
@@ -36,7 +36,7 @@
     <SellValue>5</SellValue>
     <Rarity>Common</Rarity>
     <EquipmentSlotIndex>Head</EquipmentSlotIndex>
-    <FBXName>Armor/Head/knight_head</FBXName>
+    <FBXName>Armor/Head/Knight_Head</FBXName>
     <ArmorClassValue>10</ArmorClassValue>
     <HasAbility>false</HasAbility>
     <AbilityString />
@@ -57,7 +57,7 @@
     <SellValue>5</SellValue>
     <Rarity>Rare</Rarity>
     <EquipmentSlotIndex>Body</EquipmentSlotIndex>
-    <FBXName>Armor/Body/knight_body</FBXName>
+    <FBXName>Armor/Body/Knight_Body</FBXName>
     <ArmorClassValue>20</ArmorClassValue>
     <HasAbility>false</HasAbility>
     <AbilityString />
@@ -78,7 +78,7 @@
     <SellValue>5</SellValue>
     <Rarity>Legendary</Rarity>
     <EquipmentSlotIndex>ArmR</EquipmentSlotIndex>
-    <FBXName>Armor/ArmR/knight_armR</FBXName>
+    <FBXName>Armor/ArmR/Knight_ArmR</FBXName>
     <ArmorClassValue>5</ArmorClassValue>
     <HasAbility>true</HasAbility>
     <AbilityString>Use this to destroy your foes</AbilityString>
@@ -99,7 +99,7 @@
     <SellValue>5</SellValue>
     <Rarity>Common</Rarity>
     <EquipmentSlotIndex>Legs</EquipmentSlotIndex>
-    <FBXName>Armor/Legs/knight_legs</FBXName>
+    <FBXName>Armor/Legs/Knight_Legs</FBXName>
     <ArmorClassValue>15</ArmorClassValue>
     <HasAbility>false</HasAbility>
     <AbilityString>Use this</AbilityString>
@@ -120,7 +120,7 @@
     <SellValue>0</SellValue>
     <Rarity>Common</Rarity>
     <EquipmentSlotIndex>Head</EquipmentSlotIndex>
-    <FBXName>Armor/Head/gunner_head</FBXName>
+    <FBXName>Armor/Head/Basic_Head</FBXName>
     <ArmorClassValue>10</ArmorClassValue>
     <HasAbility>false</HasAbility>
     <AbilityString>Use this</AbilityString>
@@ -141,7 +141,7 @@
     <SellValue>0</SellValue>
     <Rarity>Worthless</Rarity>
     <EquipmentSlotIndex>Body</EquipmentSlotIndex>
-    <FBXName>Armor/Body/gunner_body</FBXName>
+    <FBXName>Armor/Body/Basic_Body</FBXName>
     <ArmorClassValue>10</ArmorClassValue>
     <HasAbility>false</HasAbility>
     <AbilityString>Use this</AbilityString>
@@ -162,7 +162,7 @@
     <SellValue>0</SellValue>
     <Rarity>Common</Rarity>
     <EquipmentSlotIndex>ArmL</EquipmentSlotIndex>
-    <FBXName>Armor/ArmL/gunner_armL</FBXName>
+    <FBXName>Armor/ArmL/Basic_ArmL</FBXName>
     <ArmorClassValue>5</ArmorClassValue>
     <HasAbility>true</HasAbility>
     <AbilityString>Use this to shoot ata your enemies!</AbilityString>
@@ -183,9 +183,9 @@
     <SellValue>0</SellValue>
     <Rarity>Rare</Rarity>
     <EquipmentSlotIndex>ArmR</EquipmentSlotIndex>
-    <FBXName>Armor/ArmR/gunner_armR</FBXName>
+    <FBXName>Armor/ArmR/Basic_ArmR</FBXName>
     <ArmorClassValue>15</ArmorClassValue>
-    <HasAbility>true</HasAbility>
+    <HasAbility>false</HasAbility>
     <AbilityString>Wield the power of the Thunder God</AbilityString>
     <AbilityIconPath>AbilityIcon/</AbilityIconPath>
   </RPGArmor>
@@ -204,7 +204,7 @@
     <SellValue>0</SellValue>
     <Rarity>Common</Rarity>
     <EquipmentSlotIndex>Legs</EquipmentSlotIndex>
-    <FBXName>Armor/Legs/gunner_legs</FBXName>
+    <FBXName>Armor/Legs/Basic_Legs</FBXName>
     <ArmorClassValue>5</ArmorClassValue>
     <HasAbility>false</HasAbility>
     <AbilityString>Use this</AbilityString>

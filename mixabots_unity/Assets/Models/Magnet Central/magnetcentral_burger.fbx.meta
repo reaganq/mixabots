@@ -39,6 +39,17 @@ ModelImporter:
     100066: transform7
     100068: transform8
     100070: transform9
+    100072: bun_bottom
+    100074: Bun_top
+    100076: cheese
+    100078: corrugated_lettuce
+    100080: door
+    100082: doorframe
+    100084: girder_bacon
+    100086: Hamburger_Patty
+    100088: nail
+    100090: onion_rings
+    100092: tomatoes
     400000: burger_mesh
     400002: burgerShopObj:Mesh
     400004: //RootNode
@@ -75,11 +86,61 @@ ModelImporter:
     400066: transform7
     400068: transform8
     400070: transform9
+    400072: bun_bottom
+    400074: Bun_top
+    400076: cheese
+    400078: corrugated_lettuce
+    400080: door
+    400082: doorframe
+    400084: girder_bacon
+    400086: Hamburger_Patty
+    400088: nail
+    400090: onion_rings
+    400092: tomatoes
     2300000: burger_mesh
     2300002: //RootNode
+    2300004: bun_bottom
+    2300006: Bun_top
+    2300008: cheese
+    2300010: corrugated_lettuce
+    2300012: door
+    2300014: doorframe
+    2300016: girder_bacon
+    2300018: Hamburger_Patty
+    2300020: nail
+    2300022: onion_rings
+    2300024: polySurface1
+    2300026: tomatoes
+    2300028: polySurface2
     3300000: burger_mesh
     3300002: //RootNode
+    3300004: bun_bottom
+    3300006: Bun_top
+    3300008: cheese
+    3300010: corrugated_lettuce
+    3300012: door
+    3300014: doorframe
+    3300016: girder_bacon
+    3300018: Hamburger_Patty
+    3300020: nail
+    3300022: onion_rings
+    3300024: polySurface1
+    3300026: tomatoes
+    3300028: polySurface2
     4300000: burger_mesh
+    4300002: door
+    4300004: Bun_top
+    4300006: bun_bottom
+    4300008: Hamburger_Patty
+    4300010: doorframe
+    4300012: tomatoes
+    4300014: onion_rings
+    4300016: girder_bacon
+    4300018: polySurface1
+    4300020: corrugated_lettuce
+    4300022: cheese
+    4300024: nail
+    4300026: polySurface2
     9500000: //RootNode
   materials:
     importMaterials: 1

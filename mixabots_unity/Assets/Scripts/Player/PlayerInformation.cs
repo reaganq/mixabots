@@ -147,18 +147,18 @@ public class PlayerInformation  {
     
     public void StartNewGame()
     {
-        for (int i = 6; i < 11 ; i++) {
+        for (int i = 1; i < 11 ; i++) {
             PreffixSolver.GiveItem(PreffixType.ARMOR, i, 1);
             //Debug.Log(i);
         }
         
+        //PreffixSolver.GiveItem(PreffixType.ARMOR, 1, 1);
         
-        
-        BodyInventory.EquipItem(BodyInventory.Items[0]);
-        HeadInventory.EquipItem(HeadInventory.Items[0]);
+        BodyInventory.EquipItem(BodyInventory.Items[1]);
+        HeadInventory.EquipItem(HeadInventory.Items[1]);
         ArmLInventory.EquipItem(ArmLInventory.Items[0]);
-        ArmRInventory.EquipItem(ArmRInventory.Items[0]);
-        LegsInventory.EquipItem(LegsInventory.Items[0]);
+        ArmRInventory.EquipItem(ArmRInventory.Items[1]);
+        LegsInventory.EquipItem(LegsInventory.Items[1]);
         
         AddCurrency(1000,BuyCurrencyType.Magnets);
         AddCurrency(100,BuyCurrencyType.Crystals);

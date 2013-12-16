@@ -236,31 +236,31 @@ public class Equipment
             if(IsEquipmentSlotUsed(EquipmentSlots.Head))
                 Player.Instance.Hero.HeadInventory.UnequipItem(EquippedHead);
             EquippedHead = equiped;
-            Player.Instance.avatar.SpawnHead(e.FBXName);
+            Player.Instance.avatar.EquipBodyPart(e.FBXName, EquipmentSlots.Head);
             break;
         case EquipmentSlots.Body:
             if(IsEquipmentSlotUsed(EquipmentSlots.Body))
                 Player.Instance.Hero.BodyInventory.UnequipItem(EquippedBody);
             EquippedBody = equiped;
-            Player.Instance.avatar.SpawnBody(e.FBXName);
+            Player.Instance.avatar.EquipBodyPart(e.FBXName, EquipmentSlots.Body);
             break;
         case EquipmentSlots.ArmL:
             if(IsEquipmentSlotUsed(EquipmentSlots.ArmL))
                 Player.Instance.Hero.ArmLInventory.UnequipItem(EquippedArmL);
             EquippedArmL = equiped;
-            Player.Instance.avatar.SpawnArmL(e.FBXName);
+            Player.Instance.avatar.EquipBodyPart(e.FBXName, EquipmentSlots.ArmL);
             break;
         case EquipmentSlots.ArmR:
             if(IsEquipmentSlotUsed(EquipmentSlots.ArmR))
                 Player.Instance.Hero.ArmRInventory.UnequipItem(EquippedArmR);
             EquippedArmR = equiped;
-            Player.Instance.avatar.SpawnArmR(e.FBXName);
+            Player.Instance.avatar.EquipBodyPart(e.FBXName, EquipmentSlots.ArmR);
             break;
         case EquipmentSlots.Legs:
             if(IsEquipmentSlotUsed(EquipmentSlots.Legs))
                 Player.Instance.Hero.LegsInventory.UnequipItem(EquippedLegs);
             EquippedLegs = equiped;
-            Player.Instance.avatar.SpawnLegs(e.FBXName);
+            Player.Instance.avatar.EquipBodyPart(e.FBXName, EquipmentSlots.Legs);
             break;
     }
         

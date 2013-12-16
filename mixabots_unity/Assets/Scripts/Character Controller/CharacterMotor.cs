@@ -6,18 +6,17 @@ public class CharacterMotor : MonoBehaviour {
     public ArmorController[] ArmorControllers = new ArmorController[5];
     
     public CharacterController controller;
+    public CharacterAnimationManager animationManager;
     public Animation animationTarget;
     public Avatar avatar;
-    public animationState myState;
     public InputController input;
     
     private Transform _myTransform;
     //private Transform rigidbodyTransform;
     
-    public bool canRun = true;
-    public bool isRunning = false;
+    //public bool canRun = true;
+    //public bool isRunning = false;
     public bool canControl = true;
-    
     public bool canRotate = true;
     
     public Vector3 dir;
@@ -33,9 +32,12 @@ public class CharacterMotor : MonoBehaviour {
     public float rollSlowTime;
     public float acceleration;
     public float runSpeed;
+
+    //----- DON'T TOUCH -----//
     public Vector3 characterVelocity;
-    private Vector3 horizontalVelocity;
-    private float currentSpeed;
+    public Vector3 horizontalVelocity;
+    public float currentSpeed;
+
     
     //public Vector3 velocity = Vector3.zero;
     
@@ -45,7 +47,6 @@ public class CharacterMotor : MonoBehaviour {
         AttackButtonMessage.onSingleClick += onClick;
         AttackButtonMessage.onPress += onPress;
         AttackButtonMessage.onRelease += onRelease;
-        
     }
     
     void OnDisable()
@@ -71,23 +72,19 @@ public class CharacterMotor : MonoBehaviour {
     }
     
 	void Start () {
-        
 	    controller=GetComponent<CharacterController>();
         input = GetComponent<InputController>();
         avatar = GetComponent<Avatar>();
         _myTransform = transform;
         characterVelocity = Vector3.zero;
+        animationManager = GetComponent<CharacterAnimationManager>();
         //rigidbodyTransform = rigidbody.transform;
-        
-        myState = animationState.idle;
-        animationTarget.Play("idle");
-        
         SetRotAngle(_myTransform.position+(Vector3.forward * -10f));
         SetRotTarget();
         //UpdateAnimation(); 
-        
 	}
 	
+#region Movement
 	// Update is called once per frame
 	void Update () {
         
@@ -169,23 +166,7 @@ public class CharacterMotor : MonoBehaviour {
                 _myTransform.rotation  = Quaternion.Slerp(_myTransform.rotation,newRotation,Time.deltaTime * rotSpeed);
             }
                 direction *= Speed * 0.5f * (Vector3.Dot(_myTransform.forward,direction) + 1);
-            
-            /*if(direction.magnitude > 0.001f)  
-            {
-            // Play Runing Animation when moving
-                float speedaimation = direction.magnitude * 3;
-                gameObject.animation.CrossFade(PoseRun);
-                if(speedaimation<1){
-                speedaimation = 1;  
-                }
-            // Speed animation sync to Move Speed
-                gameObject.animation[PoseRun].speed = speedaimation;
-            
-            }
-            else{
-            // Play Idle Animation when stoped
-                gameObject.animation.CrossFade(PoseIdle);
-            }*/
+
             dir = direction;
             //Debug.LogWarning(dir);
         }
@@ -269,25 +250,6 @@ public class CharacterMotor : MonoBehaviour {
         Debug.LogError(horizontalVelocity);*/
         
     }
-    
-    public void AnimationUpdate()
-    {
-        horizontalVelocity = controller.velocity;
-        horizontalVelocity.y = 0f;
-        currentSpeed = horizontalVelocity.magnitude;
-        if(currentSpeed > 0)
-        {
-            float t = 0.0f;
-            //Debug.Log(speed);
-            t = Mathf.Clamp( Mathf.Abs( currentSpeed / runSpeed ), 0, runSpeed );
-            animationTarget["run"].speed = Mathf.Lerp( 1f, 2f, t);
-            AnimateToRunning();
-        }
-        else
-        {
-            AnimateToIdle();
-        }
-    }
 
     public void SetRotAngle(Vector3 destination)
     {
@@ -298,98 +260,38 @@ public class CharacterMotor : MonoBehaviour {
         rotAngle = (Mathf.Atan2((destination.z - _myTransform.position.z),(destination.x-_myTransform.position.x)))*(180f/Mathf.PI);
         rotAngle=(-rotAngle+90f);
         
-        Debug.Log("rotAngle: "+rotAngle);
+        //Debug.Log("rotAngle: "+rotAngle);
     }
     
     public void SetRotTarget()
     {
         rotTarget = Quaternion.Euler(new Vector3(0f, rotAngle, 0f));
     }
-    
-    public void AnimateToIdle()
-    {
-        if(myState != animationState.idle)
-        {
-            animationTarget.CrossFade("idle");
-            foreach(ArmorController armor in ArmorControllers)
-            {
-                if(armor != null && armor.hasIdleAnimationOverride)
-                {
-                    animationTarget.CrossFade(armor.IdleOverrideAnimationClip.name);
-                        }
-            }
-            myState = animationState.idle;
-        }
-    }
-    
-    public void AnimateToRunning()
-    {
-        if(myState != animationState.running)
-        {
-            animationTarget.CrossFade("run");
-            foreach(ArmorController armor in ArmorControllers)
-            {
-                //Debug.Log("found armor");
-                if(armor != null && armor.hasRunningOverride)
-                {
-                    animationTarget.Blend(armor.RunningOverrideAnimationClip.name);
-                Debug.Log("overriding idle");
-                }
-            }
-            myState = animationState.running;
-        }
-        
-        
-    }
-    
-    public void UpdateAnimation()
-    {
-        if(myState == animationState.idle)
-        {
-            animationTarget.CrossFade("idle");
-            foreach(ArmorController armor in ArmorControllers)
-            {
-                //Debug.Log("found armor");
-                if(armor != null && armor.hasIdleAnimationOverride)
-                {
-                    animationTarget.Play(armor.IdleOverrideAnimationClip.name);
-                Debug.Log("overriding idle");
-                }
-            }
-        }
-    }
-    
-    public void UpdateUpperBodyMixingTransforms()
-    {
-        foreach(ArmorController armor in ArmorControllers)
-        {
-            if(armor != null)
-                armor.UpdateMixingTransforms();
-        }
-    }
-    
 
-    
+    #endregion
+
+    public void AnimationUpdate()
+    {
+        horizontalVelocity = controller.velocity;
+        horizontalVelocity.y = 0f;
+        currentSpeed = horizontalVelocity.magnitude;
+        if(currentSpeed > 0)
+        {
+            float t = 0.0f;
+            //Debug.Log(speed);
+            t = Mathf.Clamp( Mathf.Abs( currentSpeed / runSpeed ), 0, runSpeed );
+            animationTarget["Default_Run"].speed = Mathf.Lerp( 1f, 2f, t);
+            animationManager.AnimateToRunning();
+        }
+        else
+        {
+            //if(animationManager.myState == 
+            animationManager.AnimateToIdle();
+        }
+    }
 }
 
-public enum animationState
-{
-    idle,
-    running,
-    armLpreattack,
-    armLattack,
-    armLrecoil,
-    armLpostattack,
-    armRpreattack,
-    armRattack,
-    armRrecoil,
-    armRpostattack,
-    specialattack,
-    stunned,
-    frozen,
-    victory,
-    death
-}
+
 
 // idle
 // run

@@ -1,34 +1,18 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Character Controller/CharacterMotor.cs">
+    <Files>
+      <File FileName="Assets/Scripts/Character Controller/CharacterMotor.cs" Line="323" Column="10" />
+      <File FileName="Assets/Scripts/Character Controller/CharacterAnimationManager.cs" Line="12" Column="36" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="Assembly-CSharp" expanded="True">
-            <Node name="Assets" expanded="True">
-              <Node name="NGUI" expanded="True">
-                <Node name="Scripts" expanded="True">
-                  <Node name="Internal" expanded="True" />
-                </Node>
-              </Node>
-              <Node name="Scripts" expanded="True">
-                <Node name="Base" expanded="True" />
-                <Node name="Camera" expanded="True" />
-                <Node name="Character Controller" expanded="True" />
-                <Node name="GUI" expanded="True">
-                  <Node name="NPCGUIController.cs" selected="True" />
-                </Node>
-                <Node name="Item" expanded="True" />
-                <Node name="NPC" expanded="True" />
-                <Node name="Player" expanded="True" />
-                <Node name="Storage" expanded="True" />
-              </Node>
-            </Node>
-          </Node>
-          <Node name="Assembly-CSharp-Editor" expanded="True">
-            <Node name="Assets" expanded="True">
-              <Node name="Scripts" expanded="True">
-                <Node name="Editor" expanded="True" />
+            <Node name="Scripts" expanded="True">
+              <Node name="Armor" expanded="True" />
+              <Node name="Character Controller" expanded="True">
+                <Node name="CharacterMotor.cs" selected="True" />
               </Node>
             </Node>
           </Node>
