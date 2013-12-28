@@ -2,12 +2,12 @@
 <ArrayOfRPGArmor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <RPGArmor>
     <ID>3</ID>
-    <Name>Left Arm of the Holy Knight</Name>
-    <Description>left arm of knight set</Description>
+    <Name>Knight Left Arm</Name>
+    <Description>awesome shield bro!</Description>
     <SystemDescription />
     <IsUsable>false</IsUsable>
     <ItemCategory>Armor</ItemCategory>
-    <IconPath>icon_knight_armL</IconPath>
+    <IconPath>knight_armL</IconPath>
     <AtlasName>ArmorAtlas</AtlasName>
     <BuyCurrency>Magnets</BuyCurrency>
     <Stackable>false</Stackable>
@@ -23,12 +23,12 @@
   </RPGArmor>
   <RPGArmor>
     <ID>1</ID>
-    <Name>Tournament Helmet of the Holy Knight</Name>
-    <Description>Head piece of the knight set</Description>
+    <Name>Helmet of the Holy Knight</Name>
+    <Description>Such plummage, much wow</Description>
     <SystemDescription />
     <IsUsable>false</IsUsable>
     <ItemCategory>Armor</ItemCategory>
-    <IconPath>icon_knight_head</IconPath>
+    <IconPath>knight_head</IconPath>
     <AtlasName>ArmorAtlas</AtlasName>
     <BuyCurrency>Magnets</BuyCurrency>
     <Stackable>false</Stackable>
@@ -44,12 +44,12 @@
   </RPGArmor>
   <RPGArmor>
     <ID>2</ID>
-    <Name>Crusader Chest Piece</Name>
-    <Description>Protecting organs of holy crusaders since forever</Description>
+    <Name>Knight Pauldron</Name>
+    <Description>Come at me bro!</Description>
     <SystemDescription />
     <IsUsable>false</IsUsable>
     <ItemCategory>Armor</ItemCategory>
-    <IconPath>icon_knight_body</IconPath>
+    <IconPath>knight_body</IconPath>
     <AtlasName>ArmorAtlas</AtlasName>
     <BuyCurrency>Magnets</BuyCurrency>
     <Stackable>false</Stackable>
@@ -65,12 +65,12 @@
   </RPGArmor>
   <RPGArmor>
     <ID>4</ID>
-    <Name>Holy Lance</Name>
-    <Description>It will poke you</Description>
+    <Name>Excalibur</Name>
+    <Description>Stick'em with the pointy end!</Description>
     <SystemDescription />
     <IsUsable>false</IsUsable>
     <ItemCategory>Armor</ItemCategory>
-    <IconPath>icon_knight_armR</IconPath>
+    <IconPath>knight_armR</IconPath>
     <AtlasName>ArmorAtlas</AtlasName>
     <BuyCurrency>Magnets</BuyCurrency>
     <Stackable>false</Stackable>
@@ -87,11 +87,11 @@
   <RPGArmor>
     <ID>5</ID>
     <Name>Robust knight legs</Name>
-    <Description>Not very fast but very sturdy</Description>
+    <Description>strong but slow</Description>
     <SystemDescription />
     <IsUsable>false</IsUsable>
     <ItemCategory>Armor</ItemCategory>
-    <IconPath>icon_knight_legs</IconPath>
+    <IconPath>knight_legs</IconPath>
     <AtlasName>ArmorAtlas</AtlasName>
     <BuyCurrency>Magnets</BuyCurrency>
     <Stackable>false</Stackable>
@@ -112,7 +112,7 @@
     <SystemDescription />
     <IsUsable>false</IsUsable>
     <ItemCategory>Armor</ItemCategory>
-    <IconPath>icon_gunner_head</IconPath>
+    <IconPath>basic_head</IconPath>
     <AtlasName>ArmorAtlas</AtlasName>
     <BuyCurrency>Magnets</BuyCurrency>
     <Stackable>false</Stackable>
@@ -133,7 +133,7 @@
     <SystemDescription />
     <IsUsable>false</IsUsable>
     <ItemCategory>Armor</ItemCategory>
-    <IconPath>icon_gunner_body</IconPath>
+    <IconPath>basic_body</IconPath>
     <AtlasName>ArmorAtlas</AtlasName>
     <BuyCurrency>Magnets</BuyCurrency>
     <Stackable>false</Stackable>
@@ -149,12 +149,12 @@
   </RPGArmor>
   <RPGArmor>
     <ID>8</ID>
-    <Name>Plasma Cannon</Name>
-    <Description>default cannon gun</Description>
+    <Name>Basic Left Arm</Name>
+    <Description>Your parents don't want you</Description>
     <SystemDescription />
     <IsUsable>false</IsUsable>
     <ItemCategory>Armor</ItemCategory>
-    <IconPath>icon_gunner_armL</IconPath>
+    <IconPath>basic_armL</IconPath>
     <AtlasName>ArmorAtlas</AtlasName>
     <BuyCurrency>Magnets</BuyCurrency>
     <Stackable>false</Stackable>
@@ -170,12 +170,12 @@
   </RPGArmor>
   <RPGArmor>
     <ID>9</ID>
-    <Name>Thor's Fist</Name>
-    <Description>LIGHTNING!</Description>
+    <Name>Basic Right Arm</Name>
+    <Description>No one wants to be your friend</Description>
     <SystemDescription />
     <IsUsable>false</IsUsable>
     <ItemCategory>Armor</ItemCategory>
-    <IconPath>icon_gunner_armR</IconPath>
+    <IconPath>basic_armR</IconPath>
     <AtlasName>ArmorAtlas</AtlasName>
     <BuyCurrency>Magnets</BuyCurrency>
     <Stackable>false</Stackable>
@@ -191,12 +191,12 @@
   </RPGArmor>
   <RPGArmor>
     <ID>10</ID>
-    <Name>Quick Feet</Name>
-    <Description>quick on your feet</Description>
+    <Name>Skinny Legs</Name>
+    <Description>even hipsters think you're too underground</Description>
     <SystemDescription />
     <IsUsable>false</IsUsable>
     <ItemCategory>Armor</ItemCategory>
-    <IconPath>icon_gunner_legs</IconPath>
+    <IconPath>basic_legs</IconPath>
     <AtlasName>ArmorAtlas</AtlasName>
     <BuyCurrency>Magnets</BuyCurrency>
     <Stackable>false</Stackable>
@@ -206,6 +206,69 @@
     <EquipmentSlotIndex>Legs</EquipmentSlotIndex>
     <FBXName>Armor/Legs/Basic_Legs</FBXName>
     <ArmorClassValue>5</ArmorClassValue>
+    <HasAbility>false</HasAbility>
+    <AbilityString>Use this</AbilityString>
+    <AbilityIconPath>AbilityIcon/</AbilityIconPath>
+  </RPGArmor>
+  <RPGArmor>
+    <ID>11</ID>
+    <Name>Left Boxing Glove</Name>
+    <Description />
+    <SystemDescription />
+    <IsUsable>false</IsUsable>
+    <ItemCategory>Armor</ItemCategory>
+    <IconPath>boxer_armL</IconPath>
+    <AtlasName>ArmorAtlas</AtlasName>
+    <BuyCurrency>Magnets</BuyCurrency>
+    <Stackable>false</Stackable>
+    <BuyValue>10</BuyValue>
+    <SellValue>5</SellValue>
+    <Rarity>Rare</Rarity>
+    <EquipmentSlotIndex>ArmL</EquipmentSlotIndex>
+    <FBXName>Armor/ArmL/Boxer_ArmL</FBXName>
+    <ArmorClassValue>10</ArmorClassValue>
+    <HasAbility>false</HasAbility>
+    <AbilityString>Use this</AbilityString>
+    <AbilityIconPath>AbilityIcon/</AbilityIconPath>
+  </RPGArmor>
+  <RPGArmor>
+    <ID>12</ID>
+    <Name>Boxer's Helmet</Name>
+    <Description />
+    <SystemDescription />
+    <IsUsable>false</IsUsable>
+    <ItemCategory>Armor</ItemCategory>
+    <IconPath>boxer_head</IconPath>
+    <AtlasName>ArmorAtlas</AtlasName>
+    <BuyCurrency>Magnets</BuyCurrency>
+    <Stackable>false</Stackable>
+    <BuyValue>50</BuyValue>
+    <SellValue>10</SellValue>
+    <Rarity>Rare</Rarity>
+    <EquipmentSlotIndex>Head</EquipmentSlotIndex>
+    <FBXName>Armor/Head/Boxer_Head</FBXName>
+    <ArmorClassValue>15</ArmorClassValue>
+    <HasAbility>false</HasAbility>
+    <AbilityString>Use this</AbilityString>
+    <AbilityIconPath>AbilityIcon/</AbilityIconPath>
+  </RPGArmor>
+  <RPGArmor>
+    <ID>13</ID>
+    <Name>Tyson's Right hand</Name>
+    <Description>MIKE TYSON!!!!</Description>
+    <SystemDescription />
+    <IsUsable>false</IsUsable>
+    <ItemCategory>Armor</ItemCategory>
+    <IconPath>boxer_armR</IconPath>
+    <AtlasName>ArmorAtlas</AtlasName>
+    <BuyCurrency>Magnets</BuyCurrency>
+    <Stackable>false</Stackable>
+    <BuyValue>100</BuyValue>
+    <SellValue>50</SellValue>
+    <Rarity>Epic</Rarity>
+    <EquipmentSlotIndex>ArmR</EquipmentSlotIndex>
+    <FBXName>Armor/ArmR/Boxer_ArmR</FBXName>
+    <ArmorClassValue>50</ArmorClassValue>
     <HasAbility>false</HasAbility>
     <AbilityString>Use this</AbilityString>
     <AbilityIconPath>AbilityIcon/</AbilityIconPath>

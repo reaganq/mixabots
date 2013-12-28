@@ -119,6 +119,7 @@
      <None Include="Assets\T4M\Shaders\ShaderModel3\Diffuse\T4M 5 Textures.shader" />
      <None Include="Assets\T4M\Shaders\ShaderModel2\Toon\T4M 2 Textures Toon.shader" />
      <None Include="Assets\JMO Assets\Toony Colors Pro\Shaders\TGP_Outline.shader" />
+     <None Include="Assets\JMO Assets\Toony Colors Pro\Shaders\TGP_Basic_OneLight_Transparent.shader" />
      <None Include="Assets\T4M\Shaders\ShaderModel2\Unlit\3TexturesUnlit.shader" />
      <None Include="Assets\DemoVikings\Demo\Shaders\NewShader.shader" />
      <None Include="Assets\RPGKit\Resources\XML\ARMOREN.xml" />
@@ -169,6 +170,7 @@
      <None Include="Assets\JMO Assets\Toony Colors Pro\Shaders\TGP_BumpSpec_OneLight.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Depth.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (SoftClip).shader" />
+     <None Include="Assets\JMO Assets\Toony Colors Pro\Shaders\TGP_Outline_Basic_OneLight_Transparent.shader" />
      <None Include="Assets\T4M\Shaders\ShaderModel2\Toon\T4M 4 Textures Toon.shader" />
      <None Include="Assets\T4M\Shaders\ShaderModel2\Unlit\2TexturesUnlit.shader" />
      <None Include="Assets\T4M\Shaders\ShaderModel2\Diffuse\T4M World Projection Shader.shader" />

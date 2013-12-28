@@ -34,7 +34,6 @@ public class NPC: MonoBehaviour
     public IEnumerator ShowNPC()
     {
         yield return new WaitForEndOfFrame();
-        Debug.Log("ENTER");
         Active = true;
         Player.Instance.ActiveNPC = this;
         //Player.Instance.ActiveNPCName = character.Name;
@@ -49,7 +48,6 @@ public class NPC: MonoBehaviour
             Player.Instance.ActiveShop = thisShop;
         }
         GUIManager.Instance.DisplayNPC();
-        ///Debug.Log(character.ShopID);
     }
     
     public IEnumerator HideNPC()

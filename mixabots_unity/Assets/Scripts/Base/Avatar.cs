@@ -7,7 +7,7 @@ public class Avatar : MonoBehaviour {
 	// Use this for initialization
     public CharacterMotor animationController;
     public Animation animationTarget;
-    public CharacterAnimationManager animManager;
+    public CharacterActionManager actionManager;
     
     public Transform PelvisBone;
     public Transform BodyRoot;
@@ -26,17 +26,18 @@ public class Avatar : MonoBehaviour {
     private string LShoulderRootName = "bones:L_Shoulder";
     private string RShoulderRootName = "bones:R_Shoulder";
     private string LegsRootName = "bones:LegsRoot";
-    private Transform _myTransform;
+    public Transform _myTransform;
 
 	void Awake () {
         animationController = GetComponent<CharacterMotor>();
-        animManager = GetComponent<CharacterAnimationManager>();
+        actionManager = GetComponent<CharacterActionManager>();
         animationTarget = PelvisBone.GetComponent<Animation>();
+        _myTransform = this.transform;
 	}
     
     void Start()
     {
-        _myTransform = transform;
+
 
     }
     
@@ -50,23 +51,18 @@ public class Avatar : MonoBehaviour {
         {
             case EquipmentSlots.Head:
             SpawnHead(objectpath);
-            Debug.Log("changing head");
                 break;
             case EquipmentSlots.Body:
             SpawnBody(objectpath);
-            Debug.Log("changing body");
                 break;
             case EquipmentSlots.ArmL:
             SpawnArmL(objectpath);
-            Debug.Log("changing armL");
                 break;
             case EquipmentSlots.ArmR:
             SpawnArmR(objectpath);
-            Debug.Log("changing armr");
                 break;
             case EquipmentSlots.Legs:
             SpawnLegs(objectpath);
-            Debug.Log("changing legs");
             break;
         }
     }
@@ -75,6 +71,7 @@ public class Avatar : MonoBehaviour {
     {
         if(HeadObjects.Count > 0)
         {
+
             for (int i = 0; i < HeadObjects.Count; i++) {
                 Destroy(HeadObjects[i]); 
             }
@@ -127,7 +124,7 @@ public class Avatar : MonoBehaviour {
         // Assemble Bone Structure  
         Transform[] MyBones = new Transform[ ThisRenderer.bones.Length ];
         
-        Debug.Log("bone number" + ThisRenderer.bones.Length);
+        //Debug.Log("bone number" + ThisRenderer.bones.Length);
     
         /*foreach(Transform bone in ThisRenderer.bones)
     {
@@ -137,7 +134,7 @@ public class Avatar : MonoBehaviour {
         // As clips are using bones by their names, we find them that way.
         for( int i = 0; i < ThisRenderer.bones.Length; i++ )
         {
-            Debug.Log(ThisRenderer.bones[i].name);
+            //Debug.Log(ThisRenderer.bones[i].name);
             MyBones[ i ] = FindChildByName( ThisRenderer.bones[ i ].name, transform );
         }
     //
@@ -173,6 +170,16 @@ public class Avatar : MonoBehaviour {
     {
         if(ArmLObjects.Count > 0)
         {
+            if(actionManager.armorControllers[2] != null)
+            {
+                actionManager.armorControllers[2].UnEquip();
+                actionManager.armorControllers[2] = null;
+            }
+            if(actionManager.armorAnimControllers[2] != null)
+            {
+                actionManager.armorAnimControllers[2].RemoveAnimations();
+                actionManager.armorAnimControllers[2] = null;
+            }
             for (int i = 0; i < ArmLObjects.Count; i++) {
                 Destroy(ArmLObjects[i]);
             }
@@ -188,15 +195,21 @@ public class Avatar : MonoBehaviour {
                 PositionArmL(temp.transform.GetChild(i));
             }
         }
-        ArmorOverrideAnimationController armLcontroller = temp.GetComponent<ArmorOverrideAnimationController>();
+        ArmorSkill armLcontroller = temp.GetComponent<ArmorSkill>();
         if(armLcontroller != null)
         {
-            armLcontroller.TransferAnimations(animationTarget, this);
+            armLcontroller.Initialise(animationTarget, _myTransform, actionManager);
 
-
-            animManager.AddArmorcontroller(armLcontroller,2);
             Debug.Log("transfer animation");
         }
+
+        PassiveArmorAnimationController armLAnimController = temp.GetComponent<PassiveArmorAnimationController>();
+        if(armLAnimController != null)
+        {
+            armLAnimController.TransferAnimations(animationTarget, _myTransform);
+        }
+
+        actionManager.AddArmorcontroller(armLcontroller, armLAnimController, 2);
         ArmLObjects.Add(temp);
         //ArmorController armLcontroller = ArmL.GetComponent<ArmorController>();
 
@@ -221,6 +234,16 @@ public class Avatar : MonoBehaviour {
     {
         if(ArmRObjects.Count > 0)
         {
+            if(actionManager.armorControllers[3] != null)
+            {
+                actionManager.armorControllers[3].UnEquip();
+                actionManager.armorControllers[3] = null;
+            }
+            if(actionManager.armorAnimControllers[3] != null)
+            {
+                actionManager.armorAnimControllers[3].RemoveAnimations();
+                actionManager.armorAnimControllers[3] = null;
+            }
             for (int i = 0; i < ArmRObjects.Count; i++) {
                 Destroy(ArmRObjects[i]);
             }
@@ -236,7 +259,23 @@ public class Avatar : MonoBehaviour {
                 PositionArmR(temp.transform.GetChild(i));
             }
         }
-        
+
+        ArmorSkill armRcontroller = temp.GetComponent<ArmorSkill>();
+        if(armRcontroller != null)
+        {
+            armRcontroller.Initialise(animationTarget, _myTransform, actionManager);
+
+            Debug.Log("transfer animation");
+        }
+
+        PassiveArmorAnimationController armRAnimController = temp.GetComponent<PassiveArmorAnimationController>();
+        if(armRAnimController != null)
+        {
+            armRAnimController.TransferAnimations(animationTarget, _myTransform);
+            //animManager.
+        }
+
+        actionManager.AddArmorcontroller(armRcontroller, armRAnimController,3);
         ArmRObjects.Add(temp);
         /*if(armRcontroller != null)
         {

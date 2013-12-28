@@ -80,6 +80,24 @@ ModelImporter:
     100148: transform5
     100150: transform8
     100152: transform9
+    100154: joint1
+    100156: joint10
+    100158: joint11
+    100160: joint12
+    100162: joint13
+    100164: joint14
+    100166: joint15
+    100168: joint16
+    100170: joint2
+    100172: joint3
+    100174: joint4
+    100176: joint5
+    100178: joint6
+    100180: joint7
+    100182: joint8
+    100184: joint9
+    100186: polySurface95
+    100188: polySurface97
     400000: //RootNode
     400002: group1
     400004: labmesh
@@ -157,6 +175,24 @@ ModelImporter:
     400148: transform5
     400150: transform8
     400152: transform9
+    400154: joint1
+    400156: joint10
+    400158: joint11
+    400160: joint12
+    400162: joint13
+    400164: joint14
+    400166: joint15
+    400168: joint16
+    400170: joint2
+    400172: joint3
+    400174: joint4
+    400176: joint5
+    400178: joint6
+    400180: joint7
+    400182: joint8
+    400184: joint9
+    400186: polySurface95
+    400188: polySurface97
     2300000: //RootNode
     2300002: polySurface21
     2300004: polySurface22
@@ -172,6 +208,7 @@ ModelImporter:
     2300024: polySurface67
     2300026: polySurface68
     2300028: polySurface69
+    2300030: polySurface95
     3300000: //RootNode
     3300002: polySurface21
     3300004: polySurface22
@@ -187,6 +224,7 @@ ModelImporter:
     3300024: polySurface67
     3300026: polySurface68
     3300028: polySurface69
+    3300030: polySurface95
     4300000: LabMesh
     4300002: labmesh
     4300004: polySurface5
@@ -203,20 +241,90 @@ ModelImporter:
     4300026: polySurface67
     4300028: polySurface68
     4300030: polySurface69
+    4300032: polySurface95
+    4300034: polySurface97
+    7400000: Take 001
     9500000: //RootNode
+    11100000: //RootNode
+    13700000: polySurface95
+    13700002: polySurface97
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
+    optimizeGameObjects: 0
     animationCompression: 1
     animationRotationError: .5
     animationPositionError: .5
     animationScaleError: .5
     animationWrapMode: 0
-    clipAnimations: []
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 300
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: joint1
+        weight: 1
+      - path: joint1/joint2
+        weight: 1
+      - path: joint1/joint3
+        weight: 1
+      - path: joint1/joint4
+        weight: 1
+      - path: joint1/joint4/joint5
+        weight: 1
+      - path: joint1/joint6
+        weight: 1
+      - path: joint1/joint6/joint7
+        weight: 1
+      - path: joint1/joint6/joint7/joint8
+        weight: 1
+      - path: joint1/joint9
+        weight: 1
+      - path: joint1/joint9/joint10
+        weight: 1
+      - path: joint1/joint11
+        weight: 1
+      - path: joint1/joint11/joint12
+        weight: 1
+      - path: joint1/joint11/joint12/joint16
+        weight: 1
+      - path: joint1/joint13
+        weight: 1
+      - path: joint1/joint14
+        weight: 1
+      - path: joint1/joint15
+        weight: 1
+      - path: polySurface95
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -243,7 +351,6 @@ ModelImporter:
   humanDescription:
     human: []
     skeleton: []
-    handles: []
     armTwist: .5
     foreArmTwist: .5
     upperLegTwist: .5
@@ -253,6 +360,5 @@ ModelImporter:
     feetSpacing: 0
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  additionalBone: 1
-  animationType: 0
+  animationType: 1
   userData: 

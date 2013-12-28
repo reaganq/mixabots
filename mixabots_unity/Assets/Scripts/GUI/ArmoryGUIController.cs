@@ -38,7 +38,7 @@ public class ArmoryGUIController : BasicGUIController {
     {
         if(index == CurrentSelectedItemIndex || index >= SelectedInventory.Items.Count)
         {
-            Debug.Log("return");
+            //Debug.Log("return");
             return;
         }
         else

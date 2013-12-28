@@ -14,12 +14,10 @@ public class NPCGUIController : MonoBehaviour {
         textLabel.text = Player.Instance.ActiveNPC.character.Name;
         if(Player.Instance.ActiveShop != null)
         {
-            Debug.Log("has shop");
             enterShopButton.SetActive(true);
         }
         else
         {
-            Debug.Log("no shop");
             enterShopButton.SetActive(false);
         }
         confirmButton.SetActive(true);

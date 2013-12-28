@@ -338,7 +338,7 @@ ModelImporter:
     4300084: bones:Knightset_mesh:pCylinder13
     4300086: bones:Knightset_mesh:polySurface184
     4300088: bones:Knightset_mesh:polySurface186
-    7400000: ShieldBegin
+    7400000: ShieldDuration
     7400002: ShieldEnd
     7400004: ShieldBegin //// bones:Pelvis
     7400006: ShieldEnd //// bones:Pelvis
@@ -347,6 +347,8 @@ ModelImporter:
     7400012: Slash01 //// bones:Pelvis
     7400014: Slash02
     7400016: Slash02 //// bones:Pelvis
+    7400018: ShieldBegin
+    7400020: ShieldDuration //// bones:Pelvis
     9500000: //RootNode
     11100000: //RootNode
     11100002: bones:Chest
@@ -464,10 +466,10 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: ShieldBegin
+      name: ShieldDuration
       takeName: Take 001
-      firstFrame: 1
-      lastFrame: 8
+      firstFrame: 8
+      lastFrame: 9
       wrapMode: 2
       orientationOffsetY: 0
       level: 0
@@ -493,7 +495,7 @@ ModelImporter:
       name: ShieldEnd
       takeName: Take 001
       firstFrame: 9
-      lastFrame: 16
+      lastFrame: 17
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -746,6 +748,232 @@ ModelImporter:
       takeName: Take 001
       firstFrame: 50
       lastFrame: 68
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bones:Pelvis
+        weight: 1
+      - path: bones:Pelvis/bones:LegsRoot
+        weight: 1
+      - path: bones:Pelvis/bones:LegsRoot/bones:Knightset_mesh:pCylinder13
+        weight: 1
+      - path: bones:Pelvis/bones:LegsRoot/bones:Knightset_mesh:polySurface184
+        weight: 1
+      - path: bones:Pelvis/bones:LegsRoot/bones:Knightset_mesh:polySurface186
+        weight: 1
+      - path: bones:Pelvis/bones:LegsRoot/bones:L_Thigh
+        weight: 1
+      - path: bones:Pelvis/bones:LegsRoot/bones:L_Thigh/bones:Knightset_mesh:pCube5
+        weight: 1
+      - path: bones:Pelvis/bones:LegsRoot/bones:L_Thigh/bones:Knightset_mesh:pCylinder16
+        weight: 1
+      - path: bones:Pelvis/bones:LegsRoot/bones:L_Thigh/bones:Knightset_mesh:polySurface185
+        weight: 1
+      - path: bones:Pelvis/bones:LegsRoot/bones:L_Thigh/bones:L_Knee
+        weight: 1
+      - path: bones:Pelvis/bones:LegsRoot/bones:L_Thigh/bones:L_Knee/bones:Knightset_mesh:polySurface163
+        weight: 1
+      - path: bones:Pelvis/bones:LegsRoot/bones:L_Thigh/bones:L_Knee/bones:Knightset_mesh:polySurface164
+        weight: 1
+      - path: bones:Pelvis/bones:LegsRoot/bones:L_Thigh/bones:L_Knee/bones:Knightset_mesh:polySurface166
+        weight: 1
+      - path: bones:Pelvis/bones:LegsRoot/bones:L_Thigh/bones:L_Knee/bones:Knightset_mesh:polySurface167
+        weight: 1
+      - path: bones:Pelvis/bones:LegsRoot/bones:L_Thigh/bones:L_Knee/bones:Knightset_mesh:polySurface169
+        weight: 1
+      - path: bones:Pelvis/bones:LegsRoot/bones:L_Thigh/bones:L_Knee/bones:Knightset_mesh:polySurface170
+        weight: 1
+      - path: bones:Pelvis/bones:LegsRoot/bones:L_Thigh/bones:L_Knee/bones:L_Ankle
+        weight: 1
+      - path: bones:Pelvis/bones:LegsRoot/bones:L_Thigh/bones:L_Knee/bones:L_Ankle/bones:Knightset_mesh:polySurface171
+        weight: 1
+      - path: bones:Pelvis/bones:LegsRoot/bones:L_Thigh/bones:L_Knee/bones:L_Ankle/bones:L_Ball
+        weight: 1
+      - path: bones:Pelvis/bones:LegsRoot/bones:L_Thigh/bones:L_Knee/bones:L_Ankle/bones:L_Ball/bones:L_Toe
+        weight: 1
+      - path: bones:Pelvis/bones:LegsRoot/bones:R_Thigh
+        weight: 1
+      - path: bones:Pelvis/bones:LegsRoot/bones:R_Thigh/bones:Knightset_mesh:pCube6
+        weight: 1
+      - path: bones:Pelvis/bones:LegsRoot/bones:R_Thigh/bones:Knightset_mesh:pCylinder19
+        weight: 1
+      - path: bones:Pelvis/bones:LegsRoot/bones:R_Thigh/bones:Knightset_mesh:polySurface194
+        weight: 1
+      - path: bones:Pelvis/bones:LegsRoot/bones:R_Thigh/bones:R_Knee
+        weight: 1
+      - path: bones:Pelvis/bones:LegsRoot/bones:R_Thigh/bones:R_Knee/bones:Knightset_mesh:polySurface187
+        weight: 1
+      - path: bones:Pelvis/bones:LegsRoot/bones:R_Thigh/bones:R_Knee/bones:Knightset_mesh:polySurface188
+        weight: 1
+      - path: bones:Pelvis/bones:LegsRoot/bones:R_Thigh/bones:R_Knee/bones:Knightset_mesh:polySurface189
+        weight: 1
+      - path: bones:Pelvis/bones:LegsRoot/bones:R_Thigh/bones:R_Knee/bones:Knightset_mesh:polySurface190
+        weight: 1
+      - path: bones:Pelvis/bones:LegsRoot/bones:R_Thigh/bones:R_Knee/bones:Knightset_mesh:polySurface191
+        weight: 1
+      - path: bones:Pelvis/bones:LegsRoot/bones:R_Thigh/bones:R_Knee/bones:Knightset_mesh:polySurface192
+        weight: 1
+      - path: bones:Pelvis/bones:LegsRoot/bones:R_Thigh/bones:R_Knee/bones:R_Ankle
+        weight: 1
+      - path: bones:Pelvis/bones:LegsRoot/bones:R_Thigh/bones:R_Knee/bones:R_Ankle/bones:Knightset_mesh:polySurface193
+        weight: 1
+      - path: bones:Pelvis/bones:LegsRoot/bones:R_Thigh/bones:R_Knee/bones:R_Ankle/bones:R_Ball
+        weight: 1
+      - path: bones:Pelvis/bones:LegsRoot/bones:R_Thigh/bones:R_Knee/bones:R_Ankle/bones:R_Ball/bones:R_Toe
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Knightset_mesh:pCylinder10
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Knightset_mesh:pSphere2
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2/bones:Chest
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2/bones:Chest/bones:Head_Hover_a
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2/bones:Chest/bones:Head_Hover_a/bones:Head_Hover_b
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2/bones:Chest/bones:Head_Hover_a/bones:Head_Hover_b/bones:Neck
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2/bones:Chest/bones:Head_Hover_a/bones:Head_Hover_b/bones:Neck/bones:Eyes
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2/bones:Chest/bones:Head_Hover_a/bones:Head_Hover_b/bones:Neck/bones:Eyes/bones:L_Eye
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2/bones:Chest/bones:Head_Hover_a/bones:Head_Hover_b/bones:Neck/bones:Eyes/bones:L_Eye/bones:L_Eye_end
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2/bones:Chest/bones:Head_Hover_a/bones:Head_Hover_b/bones:Neck/bones:Eyes/bones:R_Eye
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2/bones:Chest/bones:Head_Hover_a/bones:Head_Hover_b/bones:Neck/bones:Eyes/bones:R_Eye/bones:R_Eye_End
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2/bones:Chest/bones:Head_Hover_a/bones:Head_Hover_b/bones:Neck/bones:Head
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2/bones:Chest/bones:Head_Hover_a/bones:Head_Hover_b/bones:Neck/bones:Knightset_mesh:polySurface132
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2/bones:Chest/bones:Head_Hover_a/bones:Head_Hover_b/bones:Neck/bones:Knightset_mesh:polySurface134
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2/bones:Chest/bones:Head_Hover_a/bones:Head_Hover_b/bones:Neck/bones:Knightset_mesh:polySurface136
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2/bones:Chest/bones:Head_Hover_a/bones:Head_Hover_b/bones:Neck/bones:Knightset_mesh:polySurface144
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2/bones:Chest/bones:Head_Hover_a/bones:Head_Hover_b/bones:Neck/bones:Knightset_mesh:polySurface146
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2/bones:Chest/bones:Head_Hover_a/bones:Head_Hover_b/bones:Neck/bones:Knightset_mesh:polySurface146/bones:Knightset_mesh:pCube1
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2/bones:Chest/bones:Head_Hover_a/bones:Head_Hover_b/bones:Neck/bones:Knightset_mesh:polySurface161
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2/bones:Chest/bones:L_Clavicle
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2/bones:Chest/bones:L_Clavicle/bones:L_Arm_Hover_a
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2/bones:Chest/bones:L_Clavicle/bones:L_Arm_Hover_a/bones:L_Arm_Hover_b
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2/bones:Chest/bones:L_Clavicle/bones:L_Arm_Hover_a/bones:L_Arm_Hover_b/bones:L_Shoulder
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2/bones:Chest/bones:L_Clavicle/bones:L_Arm_Hover_a/bones:L_Arm_Hover_b/bones:L_Shoulder/bones:Knightset_mesh:polySurface105
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2/bones:Chest/bones:L_Clavicle/bones:L_Arm_Hover_a/bones:L_Arm_Hover_b/bones:L_Shoulder/bones:Knightset_mesh:polySurface105/bones:Knightset_mesh:polySurface106
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2/bones:Chest/bones:L_Clavicle/bones:L_Arm_Hover_a/bones:L_Arm_Hover_b/bones:L_Shoulder/bones:L_Elbow
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2/bones:Chest/bones:L_Clavicle/bones:L_Arm_Hover_a/bones:L_Arm_Hover_b/bones:L_Shoulder/bones:L_Elbow/bones:Knightset_mesh:polySurface110
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2/bones:Chest/bones:L_Clavicle/bones:L_Arm_Hover_a/bones:L_Arm_Hover_b/bones:L_Shoulder/bones:L_Elbow/bones:Knightset_mesh:polySurface110/bones:Knightset_mesh:knight_shield:polySurface76
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2/bones:Chest/bones:L_Clavicle/bones:L_Arm_Hover_a/bones:L_Arm_Hover_b/bones:L_Shoulder/bones:L_Elbow/bones:Knightset_mesh:polySurface110/bones:Knightset_mesh:pPlane10
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2/bones:Chest/bones:L_Clavicle/bones:L_Arm_Hover_a/bones:L_Arm_Hover_b/bones:L_Shoulder/bones:L_Elbow/bones:L_Forearm
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2/bones:Chest/bones:L_Clavicle/bones:L_Arm_Hover_a/bones:L_Arm_Hover_b/bones:L_Shoulder/bones:L_Elbow/bones:L_Hand
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2/bones:Chest/bones:L_Clavicle/bones:L_Arm_Hover_a/bones:L_Arm_Hover_b/bones:L_Shoulder/bones:L_Elbow/bones:L_Hand/bones:L_IndexFinger
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2/bones:Chest/bones:L_Clavicle/bones:L_Arm_Hover_a/bones:L_Arm_Hover_b/bones:L_Shoulder/bones:L_Elbow/bones:L_Hand/bones:L_IndexFinger/bones:L_IndexFinger_end
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2/bones:Chest/bones:L_Clavicle/bones:L_Arm_Hover_a/bones:L_Arm_Hover_b/bones:L_Shoulder/bones:L_Elbow/bones:L_Hand/bones:L_SecondFinger
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2/bones:Chest/bones:L_Clavicle/bones:L_Arm_Hover_a/bones:L_Arm_Hover_b/bones:L_Shoulder/bones:L_Elbow/bones:L_Hand/bones:L_SecondFinger/bones:L_SecondFinger_End
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2/bones:Chest/bones:L_Clavicle/bones:L_Arm_Hover_a/bones:L_Arm_Hover_b/bones:L_Shoulder/bones:L_Elbow/bones:L_Hand/bones:L_Thumb
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2/bones:Chest/bones:L_Clavicle/bones:L_Arm_Hover_a/bones:L_Arm_Hover_b/bones:L_Shoulder/bones:L_Elbow/bones:L_Hand/bones:L_Thumb/bones:L_Thumb_End
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2/bones:Chest/bones:L_Clavicle/bones:L_Arm_Hover_a/bones:L_Arm_Hover_b/bones:L_Shoulder/bones:L_ShoulderGuard
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2/bones:Chest/bones:L_Clavicle/bones:L_Arm_Hover_a/bones:L_Arm_Hover_b/bones:L_Shoulder/bones:L_ShoulderGuard/bones:Knightset_mesh:polySurface143
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2/bones:Chest/bones:R_Clavicle
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2/bones:Chest/bones:R_Clavicle/bones:R_Arm_Hover_a
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2/bones:Chest/bones:R_Clavicle/bones:R_Arm_Hover_a/bones:R_Arm_Hover_b
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2/bones:Chest/bones:R_Clavicle/bones:R_Arm_Hover_a/bones:R_Arm_Hover_b/bones:R_Shoulder
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2/bones:Chest/bones:R_Clavicle/bones:R_Arm_Hover_a/bones:R_Arm_Hover_b/bones:R_Shoulder/bones:Knightset_mesh:polySurface88
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2/bones:Chest/bones:R_Clavicle/bones:R_Arm_Hover_a/bones:R_Arm_Hover_b/bones:R_Shoulder/bones:Knightset_mesh:polySurface88/bones:Knightset_mesh:polySurface89
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2/bones:Chest/bones:R_Clavicle/bones:R_Arm_Hover_a/bones:R_Arm_Hover_b/bones:R_Shoulder/bones:R_Elbow
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2/bones:Chest/bones:R_Clavicle/bones:R_Arm_Hover_a/bones:R_Arm_Hover_b/bones:R_Shoulder/bones:R_Elbow/bones:Knightset_mesh:polySurface14
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2/bones:Chest/bones:R_Clavicle/bones:R_Arm_Hover_a/bones:R_Arm_Hover_b/bones:R_Shoulder/bones:R_Elbow/bones:Knightset_mesh:polySurface14/bones:Knightset_mesh:polySurface123
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2/bones:Chest/bones:R_Clavicle/bones:R_Arm_Hover_a/bones:R_Arm_Hover_b/bones:R_Shoulder/bones:R_Elbow/bones:Knightset_mesh:polySurface14/bones:Knightset_mesh:polySurface123/bones:Knightset_mesh:polySurface79
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2/bones:Chest/bones:R_Clavicle/bones:R_Arm_Hover_a/bones:R_Arm_Hover_b/bones:R_Shoulder/bones:R_Elbow/bones:R_Forearm
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2/bones:Chest/bones:R_Clavicle/bones:R_Arm_Hover_a/bones:R_Arm_Hover_b/bones:R_Shoulder/bones:R_Elbow/bones:R_Hand
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2/bones:Chest/bones:R_Clavicle/bones:R_Arm_Hover_a/bones:R_Arm_Hover_b/bones:R_Shoulder/bones:R_Elbow/bones:R_Hand/bones:R_IndexFinger
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2/bones:Chest/bones:R_Clavicle/bones:R_Arm_Hover_a/bones:R_Arm_Hover_b/bones:R_Shoulder/bones:R_Elbow/bones:R_Hand/bones:R_IndexFinger/bones:R_IndexFinger_end
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2/bones:Chest/bones:R_Clavicle/bones:R_Arm_Hover_a/bones:R_Arm_Hover_b/bones:R_Shoulder/bones:R_Elbow/bones:R_Hand/bones:R_SecondFinger
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2/bones:Chest/bones:R_Clavicle/bones:R_Arm_Hover_a/bones:R_Arm_Hover_b/bones:R_Shoulder/bones:R_Elbow/bones:R_Hand/bones:R_SecondFinger/bones:R_SecondFinger_End
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2/bones:Chest/bones:R_Clavicle/bones:R_Arm_Hover_a/bones:R_Arm_Hover_b/bones:R_Shoulder/bones:R_Elbow/bones:R_Hand/bones:R_Thumb
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2/bones:Chest/bones:R_Clavicle/bones:R_Arm_Hover_a/bones:R_Arm_Hover_b/bones:R_Shoulder/bones:R_Elbow/bones:R_Hand/bones:R_Thumb/bones:R_Thumb_End
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2/bones:Chest/bones:R_Clavicle/bones:R_Arm_Hover_a/bones:R_Arm_Hover_b/bones:R_Shoulder/bones:R_ShoulderGuard
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2/bones:Chest/bones:R_Clavicle/bones:R_Arm_Hover_a/bones:R_Arm_Hover_b/bones:R_Shoulder/bones:R_ShoulderGuard/bones:Knightset_mesh:polySurface141
+        weight: 1
+      - path: bones:Pelvis/bones:Upperbody_Hover_a/bones:Upperbody_Hover_b/bones:Spine_1/bones:Spine_2/bones:Knightset_mesh:polySurface148
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: ShieldBegin
+      takeName: Take 001
+      firstFrame: 2
+      lastFrame: 8
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

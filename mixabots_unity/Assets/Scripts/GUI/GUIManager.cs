@@ -29,6 +29,7 @@ public class GUIManager : MonoBehaviour {
     public GameObject MainGUI = null;
     public GameObject ShopGUI = null;
     public GameObject NPCGUI = null;
+    public GameObject IntroGUI = null;
     
     public GameObject Joystick = null;
     public GameObject OpenInventoryButton = null;
@@ -39,6 +40,7 @@ public class GUIManager : MonoBehaviour {
     public bool IsShopDisplayed = false;
     public bool IsMainGUIDisplayed = false;
     public bool IsNPCGUIDisplayed = false;
+    public bool IsIntroGUIDisplayed = false;
     
     public Camera Inventory3DCamera = null;
     
@@ -53,6 +55,7 @@ public class GUIManager : MonoBehaviour {
         UICameraRoot = GameObject.FindGameObjectWithTag("UICamera").transform;
         mainCamera = Camera.main;
         HideInventory();
+        DisplayIntroGUI();
     }
     
     public void OnLevelWasLoaded(int level)
@@ -63,11 +66,38 @@ public class GUIManager : MonoBehaviour {
             CanShowInventory = false;
         
         DisplayMainGUI();
+        //DisplayIntroGUI();
+
     }
     
     public void UpdateMagnetsCount()
     {
         MagnetsCounter.text = Player.Instance.Hero.Magnets.ToString();
+    }
+
+    public void DisplayIntroGUI()
+    {
+        if(!IsIntroGUIDisplayed)
+        {
+            IntroGUI.SetActive(true);
+            IsIntroGUIDisplayed = true;
+            Debug.LogWarning("intro displayed");
+        }
+    }
+
+    public void HideIntroGUI()
+    {
+        if(IsIntroGUIDisplayed)
+        {
+            IntroGUI.SetActive(false);
+            IsIntroGUIDisplayed = false;
+        }
+    }
+
+    public void StartGame()
+    {
+        HideIntroGUI();
+        DisplayMainGUI();
     }
     
     public void DisplayMainGUI()

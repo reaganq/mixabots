@@ -59,7 +59,6 @@ public class UIButtonMessage : MonoBehaviour
 
 	void Send ()
 	{
-        Debug.Log("send");
 		if (string.IsNullOrEmpty(functionName)) return;
 		if (target == null) target = gameObject;
 

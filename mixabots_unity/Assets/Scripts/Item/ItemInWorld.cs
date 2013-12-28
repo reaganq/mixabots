@@ -8,7 +8,7 @@ public class ItemInWorld
 {
  public string UniqueItemId;
  public int CurrentAmount;
-    public int Level;
+ public int Level;
  //public float CurrentDurability;
  //public float PriceModifier;
  

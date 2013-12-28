@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class CharacterMotor : MonoBehaviour {
@@ -6,7 +6,7 @@ public class CharacterMotor : MonoBehaviour {
     public ArmorController[] ArmorControllers = new ArmorController[5];
     
     public CharacterController controller;
-    public CharacterAnimationManager animationManager;
+    public CharacterActionManager animationManager;
     public Animation animationTarget;
     public Avatar avatar;
     public InputController input;
@@ -20,9 +20,9 @@ public class CharacterMotor : MonoBehaviour {
     public bool canRotate = true;
     
     public Vector3 dir;
-    public Vector3[] speed = new Vector3[2];
+    //public Vector3[] speed = new Vector3[2];
     
-    public float Speed = 2;
+    public float Speed;
     public float rotSpeed = 11.5f;
     public Quaternion rotTarget;
     public float rotAngle;
@@ -77,7 +77,7 @@ public class CharacterMotor : MonoBehaviour {
         avatar = GetComponent<Avatar>();
         _myTransform = transform;
         characterVelocity = Vector3.zero;
-        animationManager = GetComponent<CharacterAnimationManager>();
+        animationManager = GetComponent<CharacterActionManager>();
         //rigidbodyTransform = rigidbody.transform;
         SetRotAngle(_myTransform.position+(Vector3.forward * -10f));
         SetRotTarget();
@@ -93,8 +93,12 @@ public class CharacterMotor : MonoBehaviour {
         horizontalVelocity.y = 0;
         currentSpeed = horizontalVelocity.magnitude;*/
         //UpdateMovement();
-        UpdateFunction();
-        AnimationUpdate();
+        if(input.GameStarted)
+        {
+            if(input.inputType == InputType.WASDInput)
+                UpdateFunction();
+            AnimationUpdate();
+        }
         
 	}
     
@@ -178,7 +182,7 @@ public class CharacterMotor : MonoBehaviour {
         
         velocity = ApplyInputVelocityChange(velocity);
         
-        velocity += Physics.gravity * Time.deltaTime *10;
+        velocity += Physics.gravity;
         Vector3 lastPosition = _myTransform.position;
         Vector3 currentMovementOffset = velocity * Time.deltaTime;
         
@@ -187,7 +191,8 @@ public class CharacterMotor : MonoBehaviour {
         var oldHVelocity    = new Vector3(velocity.x, 0, velocity.z);
         characterVelocity = (_myTransform.position - lastPosition) / Time.deltaTime;
         var newHVelocity    = new Vector3(characterVelocity.x, 0, characterVelocity.z);
-        
+
+
         // The CharacterController can be moved in unwanted directions when colliding with things.
         // We want to prevent this from influencing the recorded velocity.
         if (oldHVelocity == Vector3.zero) {
@@ -223,9 +228,9 @@ public class CharacterMotor : MonoBehaviour {
     public Vector3 GetDesiredHorizontalVelocity()
     {
         var desiredLocalDirection = _myTransform.InverseTransformDirection(dir);
-        var maxSpeed = MaxSpeedInDirection(desiredLocalDirection);
-        return _myTransform.TransformDirection(desiredLocalDirection * maxSpeed);
-        
+        //var maxSpeed = MaxSpeedInDirection(desiredLocalDirection);
+        //return _myTransform.TransformDirection(desiredLocalDirection * maxSpeed);
+        return _myTransform.TransformDirection(desiredLocalDirection * runSpeed);
     }
     
     float MaxSpeedInDirection (Vector3 desiredMovementDirection)
@@ -237,6 +242,7 @@ public class CharacterMotor : MonoBehaviour {
             var zAxisEllipseMultiplier  = (desiredMovementDirection.z > 0 ? runSpeed : runSpeed) / runSpeed;
             var temp    = new Vector3(desiredMovementDirection.x, 0, desiredMovementDirection.z / zAxisEllipseMultiplier).normalized;
             var length  = new Vector3(temp.x,0,temp.z * zAxisEllipseMultiplier).magnitude * runSpeed;
+            Debug.Log("length: "+length);
             return length;
         }
     }
@@ -275,12 +281,13 @@ public class CharacterMotor : MonoBehaviour {
         horizontalVelocity = controller.velocity;
         horizontalVelocity.y = 0f;
         currentSpeed = horizontalVelocity.magnitude;
+        Debug.Log(currentSpeed);
         if(currentSpeed > 0)
         {
             float t = 0.0f;
             //Debug.Log(speed);
             t = Mathf.Clamp( Mathf.Abs( currentSpeed / runSpeed ), 0, runSpeed );
-            animationTarget["Default_Run"].speed = Mathf.Lerp( 1f, 2f, t);
+            animationManager.UpdateRunningSpeed(t);
             animationManager.AnimateToRunning();
         }
         else

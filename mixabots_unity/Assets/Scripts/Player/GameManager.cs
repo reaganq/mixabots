@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour {
     {
         DontDestroyOnLoad(gameObject);
         joystick = GameObject.FindGameObjectWithTag("GameController").GetComponent<EasyJoystick>();
-        #if UNITY_EDITOR || UNITY_WEBPLAYER
+        #if UNITY_EDITOR || UNITY_WEBPLAYER 
             inputType = InputType.WASDInput;
         Debug.LogWarning("wasd");
             joystick.gameObject.SetActive(false);
@@ -26,15 +26,6 @@ public class GameManager : MonoBehaviour {
         #endif
         
     }
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }
 
 public enum InputType

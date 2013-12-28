@@ -340,7 +340,7 @@ ModelImporter:
     4300088: bones:Knightset_mesh:polySurface186
     7400000: Knight_running
     7400002: Take 001 //// bones:Pelvis
-    7400004: Knight_Running_ArmL
+    7400004: Knight_Running_Arms
     7400006: Slash01
     7400008: Slash02
     7400010: Knight_Walking_Arms
@@ -464,7 +464,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Knight_Running_ArmL
+      name: Knight_Running_Arms
       takeName: Take 001
       firstFrame: 100
       lastFrame: 122

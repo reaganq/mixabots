@@ -174,7 +174,6 @@ public class BasicInventory
          for(int index = 1; index <= amountToReach; index++)
          {
              AddInventoryItem(itemToAdd, 1);
-                Debug.Log("added item");
          }
      }
      //FinalizeInventoryOperation(player);

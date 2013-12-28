@@ -239,10 +239,16 @@
      <Compile Include="Assets\Photon Unity Networking\UtilityScripts\TestBase.cs" />
      <Compile Include="Assets\Photon Unity Networking\UtilityScripts\TimeKeeper.cs" />
      <Compile Include="Assets\RigidbodyTest\NetworkInterpolatedTransform.cs" />
-     <Compile Include="Assets\Scripts\Armor\ArmorAnimation.cs" />
-     <Compile Include="Assets\Scripts\Armor\ArmorController.cs" />
-     <Compile Include="Assets\Scripts\Armor\ArmorOverrideAnimationController.cs" />
-     <Compile Include="Assets\Scripts\Armor\SpecialArmorAnimation.cs" />
+     <Compile Include="Assets\Scripts\Armor\Base\ArmorAnimation.cs" />
+     <Compile Include="Assets\Scripts\Armor\Base\ArmorAttribute.cs" />
+     <Compile Include="Assets\Scripts\Armor\Base\ArmorController.cs" />
+     <Compile Include="Assets\Scripts\Armor\Base\ArmorSkill.cs" />
+     <Compile Include="Assets\Scripts\Armor\Base\AttackAnimation.cs" />
+     <Compile Include="Assets\Scripts\Armor\Base\PassiveArmorAnimationController.cs" />
+     <Compile Include="Assets\Scripts\Armor\Base\SkillEffect.cs" />
+     <Compile Include="Assets\Scripts\Armor\Base\SpecialArmorAnimation.cs" />
+     <Compile Include="Assets\Scripts\Armor\Melee\LongDurationMelee.cs" />
+     <Compile Include="Assets\Scripts\Armor\Melee\NormalMelee.cs" />
      <Compile Include="Assets\Scripts\Base\Avatar.cs" />
      <Compile Include="Assets\Scripts\Base\BaseLootItem.cs" />
      <Compile Include="Assets\Scripts\Base\BasicInventory.cs" />
@@ -252,7 +258,7 @@
      <Compile Include="Assets\Scripts\Base\RobotPlayer.cs" />
      <Compile Include="Assets\Scripts\Camera\ThirdPersonCamera.cs" />
      <Compile Include="Assets\Scripts\Camera\UI3DCamera.cs" />
-     <Compile Include="Assets\Scripts\Character Controller\CharacterAnimationManager.cs" />
+     <Compile Include="Assets\Scripts\Character Controller\CharacterActionManager.cs" />
      <Compile Include="Assets\Scripts\Character Controller\CharacterMotor.cs" />
      <Compile Include="Assets\Scripts\Character Controller\InputController.cs" />
      <Compile Include="Assets\Scripts\GUI\ArmoryGUIController.cs" />
@@ -269,6 +275,8 @@
      <Compile Include="Assets\Scripts\Item\RPGArmor.cs" />
      <Compile Include="Assets\Scripts\Item\RPGItem.cs" />
      <Compile Include="Assets\Scripts\Item\UsableItem.cs" />
+     <Compile Include="Assets\Scripts\Managers\JobManager.cs" />
+     <Compile Include="Assets\Scripts\Managers\JobManagerGUI.cs" />
      <Compile Include="Assets\Scripts\NPC\NPC.cs" />
      <Compile Include="Assets\Scripts\NPC\RPGNPC.cs" />
      <Compile Include="Assets\Scripts\NPC\Shop.cs" />
@@ -285,7 +293,6 @@
      <Compile Include="Assets\Scripts\Storage\IStorage.cs" />
      <Compile Include="Assets\Scripts\Storage\Language.cs" />
      <Compile Include="Assets\Scripts\Storage\XMLStorage.cs" />
-     <Compile Include="Assets\SwitchEquipment Demo\SwitchEquipment.cs" />
      <Compile Include="Assets\T4M\Scripts\T4MBillBObjSC.cs" />
      <Compile Include="Assets\T4M\Scripts\T4MLodObjSC.cs" />
      <Compile Include="Assets\T4M\Scripts\T4MObjSC.cs" />
@@ -349,6 +356,7 @@
      <None Include="Assets\T4M\Shaders\ShaderModel3\Diffuse\T4M 5 Textures.shader" />
      <None Include="Assets\T4M\Shaders\ShaderModel2\Toon\T4M 2 Textures Toon.shader" />
      <None Include="Assets\JMO Assets\Toony Colors Pro\Shaders\TGP_Outline.shader" />
+     <None Include="Assets\JMO Assets\Toony Colors Pro\Shaders\TGP_Basic_OneLight_Transparent.shader" />
      <None Include="Assets\T4M\Shaders\ShaderModel2\Unlit\3TexturesUnlit.shader" />
      <None Include="Assets\DemoVikings\Demo\Shaders\NewShader.shader" />
      <None Include="Assets\RPGKit\Resources\XML\ARMOREN.xml" />
@@ -399,6 +407,7 @@
      <None Include="Assets\JMO Assets\Toony Colors Pro\Shaders\TGP_BumpSpec_OneLight.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Depth.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (SoftClip).shader" />
+     <None Include="Assets\JMO Assets\Toony Colors Pro\Shaders\TGP_Outline_Basic_OneLight_Transparent.shader" />
      <None Include="Assets\T4M\Shaders\ShaderModel2\Toon\T4M 4 Textures Toon.shader" />
      <None Include="Assets\T4M\Shaders\ShaderModel2\Unlit\2TexturesUnlit.shader" />
      <None Include="Assets\T4M\Shaders\ShaderModel2\Diffuse\T4M World Projection Shader.shader" />
