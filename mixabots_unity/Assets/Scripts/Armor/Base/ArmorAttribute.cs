@@ -9,6 +9,14 @@ public class ArmorAttribute {
     public float attributeValue;
 }
 
+[Serializable]
+public class ArmorAttributeMultiplier
+{
+    public int attributeIndex;
+    public float attributeMultiplier = 1.0f;
+
+}
+
 public enum ArmorAttributeName
 {
     damage,
@@ -16,6 +24,4 @@ public enum ArmorAttributeName
     reloadTime,
     ammoClipSize,
     limitedUse,
-    comboDmgMultiplier,
-    finalComboDmgMultiplier
 }

@@ -13,9 +13,13 @@ using System;
 using System.Collections.Generic;
 
 [Serializable]
-public class AttackAnimation: ArmorAnimation
+public class SkillAnimation: ArmorAnimation
 {
+    public ArmorAnimation castAnimation;
+    public ArmorAnimation followThroughAnimation;
     public float castTime;
     public float followThroughTime;
+    public ArmorAttributeMultiplier[] armorAttributeMultipliers;
+    public SkillEffectMultiplier[] skillEffectMultipliers;
 }
 

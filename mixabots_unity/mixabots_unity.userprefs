@@ -1,51 +1,34 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Character Controller/CharacterMotor.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Armor/Range/StandardGun.cs">
     <Files>
-      <File FileName="Assets/Scripts/Armor/Base/ArmorSkill.cs" Line="39" Column="5" />
-      <File FileName="Assets/Scripts/Base/Avatar.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Character Controller/CharacterActionManager.cs" Line="122" Column="48" />
-      <File FileName="Assets/Scripts/Character Controller/InputController.cs" Line="99" Column="1" />
-      <File FileName="Assets/Scripts/Managers/JobManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Player/PlayerInformation.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Armor/Melee/LongDurationMelee.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Armor/Melee/NormalMelee.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Armor/Base/SkillEffect.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Armor/Base/ArmorAnimation.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Character Controller/CharacterMotor.cs" Line="231" Column="69" />
-      <File FileName="Assets/Scripts/GUI/GUIManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Player/GameManager.cs" Line="13" Column="13" />
-      <File FileName="Assets/Scripts/Camera/ThirdPersonCamera.cs" Line="79" Column="1" />
+      <File FileName="Assets/Scripts/Character/CharacterActionManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Character/CharacterStatus.cs" Line="17" Column="35" />
+      <File FileName="Assets/Scripts/Character/InputController.cs" Line="167" Column="23" />
+      <File FileName="Assets/Scripts/Armor/Melee/TriggerCollider.cs" Line="16" Column="17" />
+      <File FileName="Assets/Scripts/Armor/Range/StandardGun.cs" Line="66" Column="1" />
+      <File FileName="Assets/Scripts/Armor/Melee/LongDurationMelee.cs" Line="103" Column="46" />
+      <File FileName="Assets/Scripts/Armor/Melee/NormalMelee.cs" Line="50" Column="1" />
+      <File FileName="Assets/Scripts/Armor/Base/ArmorSkill.cs" Line="200" Column="49" />
+      <File FileName="Assets/Scripts/Armor/Base/SkillAnimation.cs" Line="16" Column="1" />
+      <File FileName="Assets/Scripts/Player/PlayerInformation.cs" Line="150" Column="31" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="Assembly-CSharp" expanded="True">
-            <Node name="JMO Assets" expanded="True">
-              <Node name="Toony Colors Pro" expanded="True">
-                <Node name="Shaders" expanded="True" />
-              </Node>
-            </Node>
             <Node name="Scripts" expanded="True">
               <Node name="Armor" expanded="True">
                 <Node name="Base" expanded="True" />
-                <Node name="Melee" expanded="True" />
+                <Node name="Melee" expanded="True">
+                  <Node name="ShieldCollider.cs" selected="True" />
+                </Node>
+                <Node name="Range" expanded="True" />
               </Node>
               <Node name="Base" expanded="True" />
-              <Node name="Camera" expanded="True" />
-              <Node name="Character Controller" expanded="True">
-                <Node name="CharacterMotor.cs" selected="True" />
-              </Node>
-              <Node name="GUI" expanded="True" />
+              <Node name="Character" expanded="True" />
               <Node name="Managers" expanded="True" />
               <Node name="Player" expanded="True" />
-            </Node>
-          </Node>
-          <Node name="Assembly-CSharp-Editor-firstpass" expanded="True">
-            <Node name="Plugins" expanded="True">
-              <Node name="Editor" expanded="True">
-                <Node name="FingerGestures" expanded="True" />
-              </Node>
             </Node>
           </Node>
         </State>
@@ -56,7 +39,9 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/reaganqiu/Projects/Magnetbots/mixabots/mixabots_unity/Assets/Scripts/Armor/Melee/NormalMelee.cs" line="49" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

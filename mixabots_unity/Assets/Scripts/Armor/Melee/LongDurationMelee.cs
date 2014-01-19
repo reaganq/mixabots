@@ -1,11 +1,12 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
 public class LongDurationMelee : ArmorSkill {
 
     /***** set up in inspector *****/
-    public ArmorAnimation backSwingAnimation;
+    public SkillAnimation skillAnimation; 
+    public ArmorAnimation castingAnimation;
     public ArmorAnimation durationAnimation;
     public ArmorAnimation followThroughAnimation;
     public TargetDetectionMethod detectionMethod;
@@ -15,62 +16,50 @@ public class LongDurationMelee : ArmorSkill {
     //can hit multiple enemies or heal multiple allies?
     public bool canHitMultipleTargets;
     
-    public List<Transform> HitEnemies;
-    public List<Transform> HitAllies;
+
     
     /***************/
     
-    public bool _skillActive = false;
+
 
     #region setup and unequip
-    public override void Initialise(Animation target, Transform character, CharacterActionManager actionManager)
+    public override void Initialise(Animation target, Transform character, CharacterActionManager actionManager, Collider masterCollider)
     {
-        base.Initialise(target,character, actionManager);
+        base.Initialise(target,character, actionManager, masterCollider);
         TransferAnimations();
         Debug.Log("override");
     }
     
     public void TransferAnimations()
     {
-        if(backSwingAnimation != null)
-            StartCoroutine(TransferAnimation(backSwingAnimation));
-        if(durationAnimation != null)
-            StartCoroutine(TransferAnimation(durationAnimation));
-        if(followThroughAnimation != null)
-            StartCoroutine(TransferAnimation(followThroughAnimation));
+        TransferSkillAnimation(skillAnimation);
     }
     
     public override void UnEquip()
     {
-        if(backSwingAnimation != null)
-            RemoveAnimation(backSwingAnimation.clip);
-        if(durationAnimation != null)
-            RemoveAnimation(durationAnimation.clip);
-        if(followThroughAnimation != null)
-            RemoveAnimation(followThroughAnimation.clip);
+        RemoveSkillAnimation(skillAnimation);
     }
     #endregion
     
     // Update is called once per frame
     
-    public override IEnumerator StartSkill()
+    public override IEnumerator PressDown()
     {
-        yield return null;
         Debug.Log("start skill");
 
         armorState = ArmorState.casting;
 
-        characterAnimation[backSwingAnimation.clip.name].time = 0;
-        characterAnimation[backSwingAnimation.clip.name].speed = 1;
-        characterAnimation[durationAnimation.clip.name].time = 0;
-        characterAnimation[followThroughAnimation.clip.name].time = 0;
+        characterAnimation[skillAnimation.castAnimation.clip.name].time = 0;
+        characterAnimation[skillAnimation.castAnimation.clip.name].speed = 1;
+        characterAnimation[skillAnimation.clip.name].time = 0;
+        characterAnimation[skillAnimation.followThroughAnimation.clip.name].time = 0;
 
-        characterAnimation.Play(backSwingAnimation.clip.name);
-        yield return new WaitForSeconds(backSwingAnimation.clip.length);
+        characterAnimation.Play(skillAnimation.castAnimation.clip.name);
+
+
+        yield return new WaitForSeconds(skillAnimation.castAnimation.clip.length);
   
         armorState = ArmorState.onUse;
-        _skillActive = true;
-
         characterAnimation.Play(durationAnimation.clip.name);
         //yield return new WaitForSeconds(attackduration);
 
@@ -80,18 +69,20 @@ public class LongDurationMelee : ArmorSkill {
         
     }
 
-    public override IEnumerator EndSkill()
+    public override IEnumerator PressUp()
     {
-        if(_skillActive)
+        while(armorState == ArmorState.casting)
         {
-            Debug.Log("wtf");
-            _skillActive = false;
-            RemoveOnUseSkillEffects();
-
-
+            yield return new WaitForEndOfFrame();
         }
 
-        float t = characterAnimation[backSwingAnimation.clip.name].normalizedTime;
+        if(armorState == ArmorState.onUse)
+        {
+            _skillActive = false;
+            RemoveOnUseSkillEffects();
+        }
+
+        /*float t = characterAnimation[castingAnimation.clip.name].normalizedTime;
 
         Debug.Log("t: " + t);
         float blendTime = 1;
@@ -104,17 +95,19 @@ public class LongDurationMelee : ArmorSkill {
         else
             blendTime = followThroughAnimation.clip.length;
 
-        if(characterAnimation.IsPlaying(backSwingAnimation.clip.name))
-           characterAnimation[backSwingAnimation.clip.name].speed = 0;
+        if(characterAnimation.IsPlaying(castingAnimation.clip.name))
+           characterAnimation[castingAnimation.clip.name].speed = 0;
+           */
 
-        characterAnimation.CrossFade(followThroughAnimation.clip.name);
-        armorState = ArmorState.recoiling;
+        characterAnimation.CrossFade(skillAnimation.followThroughAnimation.clip.name);
+        armorState = ArmorState.followThrough;
 
         //yield return new WaitForSeconds(followThroughAnimation.clip.length*0.3f);
 
-        characterAnimation.Blend(followThroughAnimation.clip.name, 0, blendTime);
+        //characterAnimation.Blend(followThroughAnimation.clip.name, 0, blendTime);
         
-        yield return new WaitForSeconds(blendTime*0.9f);
+        //yield return new WaitForSeconds(blendTime*0.9f);
+        yield return new WaitForSeconds(skillAnimation.followThroughAnimation.clip.length);
         //Debug.Log("time pased: "+ (Time.realtimeSinceStartup - time));
         //Debug.Log("finish");
         

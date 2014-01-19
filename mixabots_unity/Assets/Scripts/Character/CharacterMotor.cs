@@ -281,7 +281,7 @@ public class CharacterMotor : MonoBehaviour {
         horizontalVelocity = controller.velocity;
         horizontalVelocity.y = 0f;
         currentSpeed = horizontalVelocity.magnitude;
-        Debug.Log(currentSpeed);
+        //Debug.Log(currentSpeed);
         if(currentSpeed > 0)
         {
             float t = 0.0f;

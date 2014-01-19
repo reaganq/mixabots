@@ -44,10 +44,10 @@ public class PlayerInformation  {
     
     public int Trophies;
  
- public float BaseHp;
- public float TotalHp;
- public float BonusHp;
- public float CurrentHp;
+ public int BaseHp;
+ public int TotalHp;
+ public int BonusHp;
+ public int CurrentHp;
  //public float HpRegeneration = 0.0f;
  
  public float BaseMana;
@@ -147,7 +147,7 @@ public class PlayerInformation  {
     
     public void StartNewGame()
     {
-        for (int i = 1; i < 14 ; i++) {
+        for (int i = 1; i < 15 ; i++) {
             PreffixSolver.GiveItem(PreffixType.ARMOR, i, 1);
             //Debug.Log(i);
         }

@@ -11,6 +11,8 @@ public class CharacterActionManager : MonoBehaviour {
 
     private Job leftJob;
     private Job rightJob;
+    private Job leftEndJob;
+    private Job rightEndJob;
 
     public bool isLocked()
     {
@@ -44,7 +46,7 @@ public class CharacterActionManager : MonoBehaviour {
 
     #region action states
 
-    private ActionState _actionState;
+    public ActionState _actionState;
     public ActionState actionState
     {
         get{ return _actionState; }
@@ -105,40 +107,23 @@ public class CharacterActionManager : MonoBehaviour {
             Debug.LogWarning("returning left");
             return;
         }
-        if(trigger == InputTrigger.OnPressDown && armorControllers[2].inputTrigger == InputTrigger.OnPressDown)
+        if(trigger == InputTrigger.OnPressDown && armorControllers[2].hasPressDownEvent)
         {
             if(armorControllers[2].armorState == ArmorState.ready)
             {
-                actionState = ActionState.rightAction;
+                actionState = ActionState.leftAction;
                 Debug.LogWarning("right action state");
-                if(leftJob != null)
-                    leftJob.kill();
-                leftJob = Job.make( armorControllers[2].StartSkill() );
+                leftJob = Job.make( armorControllers[2].PressDown() );
             }
 
         }
-        if(trigger == InputTrigger.OnClick && armorControllers[2].inputTrigger == InputTrigger.OnClick)
+
+        if(trigger == InputTrigger.OnPressUp && armorControllers[2].hasPressUpEvent)
         {
-            if(armorControllers[2].armorState == ArmorState.ready)
-            {
-                actionState = ActionState.rightAction;
-                Debug.Log("right action state");
-                if(leftJob != null)
-                    leftJob.kill();
-                leftJob = Job.make( armorControllers[2].UseSkill() );
-                leftJob.jobComplete += (waskilled) => 
-                {
-                    actionState = ActionState.idle;
-                    Debug.Log("job ended, was killed = " + waskilled);
-                };
-            }
-        }
-        if(trigger == InputTrigger.OnPressUp)
-        {
-            if(leftJob != null)
-                leftJob.kill();
-            leftJob = Job.make( armorControllers[2].EndSkill() );
-            leftJob.jobComplete += (waskilled) => 
+            //if(leftJob != null)
+                //leftJob.kill();
+            leftEndJob = Job.make( armorControllers[2].PressUp() );
+            leftEndJob.jobComplete += (waskilled) => 
             {
                 actionState = ActionState.idle;
                 Debug.Log("job ended, was killed = " + waskilled);
@@ -152,35 +137,27 @@ public class CharacterActionManager : MonoBehaviour {
         if(armorControllers[3] == null || isBusy() || armorControllers[3].armorState != ArmorState.ready)
         {
             Debug.LogWarning("returning");
+
             return;
         }
-        if(trigger == InputTrigger.OnPressDown)
+        if(trigger == InputTrigger.OnPressDown && armorControllers[3].hasPressDownEvent)
         {
             actionState = ActionState.rightAction;
             Debug.Log("right action state");
-            if(rightJob != null)
-                rightJob.kill();
-            rightJob = Job.make( armorControllers[3].StartSkill() );
+            rightJob = Job.make( armorControllers[3].PressDown() );
             rightJob.jobComplete += (waskilled) => 
             {
-                actionState = ActionState.idle;
-                Debug.Log("job ended, was killed = " + waskilled);
+                if(waskilled)
+                {
+                    actionState = ActionState.idle;
+                    Debug.Log("job ended, was killed = " + waskilled);
+                }
             };
         }
-        if(trigger == InputTrigger.OnClick)
+        if(trigger == InputTrigger.OnPressUp && armorControllers[3].hasPressUpEvent)
         {
-            actionState = ActionState.rightAction;
-            Debug.Log("right action state");
-            if(rightJob != null)
-                rightJob.kill();
-            rightJob = Job.make( armorControllers[3].UseSkill() );
-        }
-        if(trigger == InputTrigger.OnPressUp)
-        {
-            if(rightJob != null)
-                rightJob.kill();
-            rightJob = Job.make( armorControllers[3].EndSkill() );
-            rightJob.jobComplete += (waskilled) => 
+            rightEndJob = Job.make( armorControllers[3].PressUp() );
+            rightEndJob.jobComplete += (waskilled) => 
             {
                 actionState = ActionState.idle;
                 Debug.Log("job ended, was killed = " + waskilled);

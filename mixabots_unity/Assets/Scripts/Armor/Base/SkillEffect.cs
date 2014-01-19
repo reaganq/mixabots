@@ -11,9 +11,30 @@ public class SkillEffect{
     public SkillEffectFormat durationFormat;
     public float effectDuration;
     public int numberOfProcs;
+    public float procChance;
     public TargetType effectTarget;
     public SkillEffectTrigger effectTrigger;
+    public bool stackable;
+    public bool refreshable;
 
+}
+
+public class SkillEffectMultiplier
+{
+    public int skillIndex;
+    public float skillMultiplier;
+}
+
+public struct EquippedSkillEffect
+{
+    public SkillEffect skillEffect;
+    public float skillMultiplier;
+
+    public EquippedSkillEffect(SkillEffect sE, float multiplier)
+    {
+        skillEffect = sE;
+        skillMultiplier = multiplier;
+    }
 }
 
 //what does the skill affect
@@ -29,7 +50,7 @@ public enum SkillEffectCategory
     lifeDrain,
     knockback,
     moveTarget,
-    health,
+    heal,
     speed
 }
 

@@ -8,17 +8,27 @@ public class ArmorSkill : MonoBehaviour {
     public bool isLimitedUse;
 
     public InputTrigger inputTrigger;
+    public bool hasPressDownEvent;
+    public bool hasPressUpEvent;
+
+    public bool _skillActive = false;
 
     /*** attribute ***/
 
+    public int itemID;
     public float cooldown;
-    public float maxAmmoCount;
+    public int maxAmmoCount;
     public float fireSpeed;
-    public float reloadTime;
-    public float damage;
+
+    public bool isReloading;
+    public float cooldownTimer;
+    public float fireSpeedTimer;
 
     public ArmorAttribute[] armorAttributes;
+    public float[] armorAttributeMultipliers;
     public SkillEffect[] skillEffects;
+    public float[] skillEffectsMultipliers;
+
     public List<SkillEffect> onUseSkillEffects;
     public List<SkillEffect> onHitSkillEffects;
     public List<SkillEffect> onReceiveHitSkillEffects;
@@ -26,30 +36,36 @@ public class ArmorSkill : MonoBehaviour {
     public Transform characterTransform;
     public Animation characterAnimation;
     public CharacterActionManager characterManager;
+    public Collider characterCollider;
     public ArmorState armorState;
 
-    public virtual void Initialise(Animation target, Transform character, CharacterActionManager actionManager)
+    public List<GameObject> HitEnemies;
+    public List<GameObject> HitAllies;
+
+    public virtual void Initialise(Animation target, Transform character, CharacterActionManager actionManager, Collider masterCollider)
     {
         characterAnimation = target;
         characterTransform = character;
         characterManager = actionManager;
-        Debug.Log("base initialise");
+        characterCollider = masterCollider;
     }
 
-    public virtual IEnumerator UseSkill()
-    {
-        Debug.Log("using skill");
-        yield return null;
-    }
-
-    public virtual IEnumerator StartSkill()
+    public virtual IEnumerator PressUp()
     {
         yield return null;
     }
 
-    public virtual IEnumerator EndSkill()
+    public virtual IEnumerator PressDown()
     {
         yield return null;
+    }
+
+    public virtual void HitEnemy(CharacterStatus target)
+    {
+    }
+
+    public virtual void HitAlly(CharacterStatus target)
+    {
     }
 
     public void ApplyOnHitSkillEffects()
@@ -107,8 +123,7 @@ public class ArmorSkill : MonoBehaviour {
         for (int i = 0; i < armorAttributes.Length ; i++) {
             if(armorAttributes[i].attributeName == ArmorAttributeName.cooldown)
                 cooldown = armorAttributes[i].attributeValue;
-            if(armorAttributes[i].attributeName == ArmorAttributeName.damage)
-                damage = armorAttributes[i].attributeValue;
+
         }
     }
 
@@ -135,25 +150,38 @@ public class ArmorSkill : MonoBehaviour {
 
     #region Animation Setup
    
+    public void TransferSkillAnimation(SkillAnimation anim)
+    {
+        if(anim.clip != null)
+            StartCoroutine(TransferAnimation(anim));
+        if(anim.castAnimation.clip != null)
+            StartCoroutine(TransferAnimation(anim.castAnimation));
+        if(anim.followThroughAnimation.clip != null)
+            StartCoroutine(TransferAnimation(anim.followThroughAnimation));
+    }
+
     public IEnumerator TransferAnimation(ArmorAnimation anim)
     {
-        characterAnimation.AddClip(anim.clip, anim.clip.name);
-        characterAnimation[anim.clip.name].layer = anim.animationLayer;
-        //StartCoroutine(MixingTransforms( anim.addMixingTransforms, anim.removeMixingTransforms, anim.clip));
-        yield return null;
-        
-        if(anim.addMixingTransforms.Count>0)
+        if(anim.clip != null)
         {
-            for (int i = 0; i < anim.addMixingTransforms.Count; i++) {
-                characterAnimation[anim.clip.name].AddMixingTransform(GetBone(anim.addMixingTransforms[i]), false);
-            }
-        }
-
-        if(anim.removeMixingTransforms.Count>0)
-        {
-            for (int i = 0; i < anim.removeMixingTransforms.Count; i++) 
+            characterAnimation.AddClip(anim.clip, anim.clip.name);
+            characterAnimation[anim.clip.name].layer = anim.animationLayer;
+            //StartCoroutine(MixingTransforms( anim.addMixingTransforms, anim.removeMixingTransforms, anim.clip));
+            yield return null;
+            
+            if(anim.addMixingTransforms.Count>0)
             {
-                characterAnimation[anim.clip.name].RemoveMixingTransform(GetBone(anim.removeMixingTransforms[i]));
+                for (int i = 0; i < anim.addMixingTransforms.Count; i++) {
+                    characterAnimation[anim.clip.name].AddMixingTransform(GetBone(anim.addMixingTransforms[i]), false);
+                }
+            }
+
+            if(anim.removeMixingTransforms.Count>0)
+            {
+                for (int i = 0; i < anim.removeMixingTransforms.Count; i++) 
+                {
+                    characterAnimation[anim.clip.name].RemoveMixingTransform(GetBone(anim.removeMixingTransforms[i]));
+                }
             }
         }
     }
@@ -161,6 +189,22 @@ public class ArmorSkill : MonoBehaviour {
     public virtual void UnEquip()
     {
 
+    }
+
+    public void RemoveSkillAnimation(SkillAnimation anim)
+    {
+        if(anim.clip != null)
+            RemoveAnimation(anim.clip);
+        if(anim.castAnimation.clip != null)
+            RemoveAnimation(anim.castAnimation.clip);
+        if(anim.followThroughAnimation.clip != null)
+            RemoveAnimation(anim.followThroughAnimation.clip);
+    }
+
+    public void RemoveArmorAnimation(ArmorAnimation anim)
+    {
+        if(anim.clip != null)
+            RemoveAnimation(anim.clip);
     }
 
     public void RemoveAnimation(AnimationClip clip)
@@ -211,9 +255,9 @@ public enum ArmorState
     ready,
     casting,
     onUse,
+    followThrough,
     recoiling,
     onCooldown,
-    reloading
 }
 
 public enum TargetDetectionMethod

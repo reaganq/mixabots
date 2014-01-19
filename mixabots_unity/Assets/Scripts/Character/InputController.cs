@@ -96,7 +96,7 @@ public class InputController : MonoBehaviour {
                 
                 var direction = Vector3.zero;
                 var forward = Quaternion.AngleAxis(-90,Vector3.up) * cameraTransform.right;
-                Debug.Log(forward);
+                //Debug.Log(forward);
                  
                 if(Input.GetKey(KeyCode.W))
                 direction += forward;
@@ -164,7 +164,7 @@ public class InputController : MonoBehaviour {
                 if(isDown)
                 {
                     //if(UICamera.currentTouchID == -1)
-                    Debug.Log("OnpressDown "+ UICamera.currentTouchID);
+                    //Debug.Log("OnpressDown "+ UICamera.currentTouchID);
                     if(!actionManager.isLocked())
                     {
                         if(UICamera.currentTouchID == -1)
@@ -182,7 +182,7 @@ public class InputController : MonoBehaviour {
                             actionManager.RightAction(InputTrigger.OnPressUp);
                     }
 
-                    Debug.Log("OnpressUp "+ UICamera.currentTouchID);
+                    //Debug.Log("OnpressUp "+ UICamera.currentTouchID);
                 }
             }
         }

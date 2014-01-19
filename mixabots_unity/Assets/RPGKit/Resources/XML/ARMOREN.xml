@@ -273,4 +273,25 @@
     <AbilityString>Use this</AbilityString>
     <AbilityIconPath>AbilityIcon/</AbilityIconPath>
   </RPGArmor>
+  <RPGArmor>
+    <ID>14</ID>
+    <Name>Gumball Gun</Name>
+    <Description />
+    <SystemDescription />
+    <IsUsable>false</IsUsable>
+    <ItemCategory>Armor</ItemCategory>
+    <IconPath>knight_armR</IconPath>
+    <AtlasName>ArmorAtlas</AtlasName>
+    <BuyCurrency>Magnets</BuyCurrency>
+    <Stackable>false</Stackable>
+    <BuyValue>100</BuyValue>
+    <SellValue>50</SellValue>
+    <Rarity>Common</Rarity>
+    <EquipmentSlotIndex>ArmR</EquipmentSlotIndex>
+    <FBXName>Armor/ArmR/gumball_armR</FBXName>
+    <ArmorClassValue>10</ArmorClassValue>
+    <HasAbility>false</HasAbility>
+    <AbilityString>Use this</AbilityString>
+    <AbilityIconPath>AbilityIcon/</AbilityIconPath>
+  </RPGArmor>
 </ArrayOfRPGArmor>

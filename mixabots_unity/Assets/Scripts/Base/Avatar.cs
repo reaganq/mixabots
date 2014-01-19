@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class Avatar : MonoBehaviour {
 
 	// Use this for initialization
-    public CharacterMotor animationController;
+    public CharacterMotor characterMotor;
     public Animation animationTarget;
     public CharacterActionManager actionManager;
     
@@ -29,7 +29,7 @@ public class Avatar : MonoBehaviour {
     public Transform _myTransform;
 
 	void Awake () {
-        animationController = GetComponent<CharacterMotor>();
+        characterMotor = GetComponent<CharacterMotor>();
         actionManager = GetComponent<CharacterActionManager>();
         animationTarget = PelvisBone.GetComponent<Animation>();
         _myTransform = this.transform;
@@ -198,7 +198,7 @@ public class Avatar : MonoBehaviour {
         ArmorSkill armLcontroller = temp.GetComponent<ArmorSkill>();
         if(armLcontroller != null)
         {
-            armLcontroller.Initialise(animationTarget, _myTransform, actionManager);
+            armLcontroller.Initialise(animationTarget, _myTransform, actionManager, (Collider)characterMotor.controller );
 
             Debug.Log("transfer animation");
         }
@@ -263,9 +263,9 @@ public class Avatar : MonoBehaviour {
         ArmorSkill armRcontroller = temp.GetComponent<ArmorSkill>();
         if(armRcontroller != null)
         {
-            armRcontroller.Initialise(animationTarget, _myTransform, actionManager);
+            armRcontroller.Initialise(animationTarget, _myTransform, actionManager, characterMotor.controller);
 
-            Debug.Log("transfer animation");
+            //Debug.Log("transfer animation");
         }
 
         PassiveArmorAnimationController armRAnimController = temp.GetComponent<PassiveArmorAnimationController>();
